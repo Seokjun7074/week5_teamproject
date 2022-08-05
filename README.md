@@ -1,70 +1,33 @@
-# Getting Started with Create React App
+- **UI/UX**
+  - 팀만의 창의적인 UI/UX로 과제를 만드세요. (예시는 예시일뿐 입니다)
+  - 예시에 없어도 팀에서 만들고 싶은 기능이 있다면 **OK!**
+- **필수 요구 사항**
+  - **동적 라우팅을 사용**하세요.
+  - 1개 이상의 `Custom Hook`을 구현하세요.
+  - **Form에 유효성 검증 기능을 적용**하세요. _유효성 검증이란, 아래의 예시들을 의미합니다._
+    - ex: 제목을 10글자 이상 기입하지 않으면, 글을 추가할 수 없도록 제한 → `Alert` 으로 안내
+    - ex: Form에서 모든 input에 값을 입력하지 않으면, 버튼이 비활성화
+  - 버튼 **컴포넌트 1개로 모든 버튼을 구현**하세요. 모든 스타일과 기능을 버튼을 구현할 수 있는 **만능 버튼**을 만들어보는 것 입니다.
+  - `development` 환경에서만 `redux devtool`이 활성화 되도록 처리합니다.
+  - 배포된 결과물에서는 `console.log()` 가 보이지 않도록 처리합니다.
+  - `.env` 를 이용해서 API 서버의 URL 코드상에서 숨기도록 처리합니다.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+---
 
-## Available Scripts
+feat : 새로운 기능에 대한 커밋
 
-In the project directory, you can run:
+fix : 버그 수정에 대한 커밋
 
-### `yarn start`
+build : 빌드 관련 파일 수정에 대한 커밋
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+chore : 그 외 자잘한 수정에 대한 커밋
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+ci : CI관련 설정 수정에 대한 커밋
 
-### `yarn test`
+docs : 문서 수정에 대한 커밋
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+style : 코드 스타일 혹은 포맷 등에 관한 커밋
 
-### `yarn build`
+refactor : 코드 리팩토링에 대한 커밋
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+test : 테스트 코드 수정에 대한 커밋
