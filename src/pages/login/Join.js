@@ -18,7 +18,7 @@ const Join = () => {
        }
 
     const OnSubmitHandler = (e) =>{
-      // e.preventDefault();
+      e.preventDefault();
       MySwal.fire({
         text: 'Thank you for your join',
         icon: 'success',
@@ -26,15 +26,36 @@ const Join = () => {
       })
     }
 
+    const onClickHandler = (e) =>{
+      console.log("this is the test");
+    }
+
     const onChangeGen = (e) =>{
       console.log(e.target.value);
       // console.log(e.target.id);
-      // e.target.id==="F" ? setGender("female") : setGender("male");
+      (e.target.id==="F") ? setGender("female") : setGender("male");
     }
+
+    const handleChange1 = (e) => {
+        // console.log(e.target.value);
+      setMonthSelected(e.target.value);
+      console.log(monthSelected);
+    }
+
+    const handleChange2 = (e) => {
+      // console.log(e.target.value);
+    setDaySelected(e.target.value);
+    console.log(daySelected);
+  }
 
     const [id, setId] = useState(null);
     const [pw, setPw] = useState(null);
     const [gender,setGender] = useState("F");
+    // month selected first, and then day selected (optional)
+    const month = [1,2,3,4,5,6,7,8,9,10,11,12];
+    const day = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,24,25,26,27,28,29,30,31];
+    const [monthSelected, setMonthSelected] = useState(0);
+    const [daySelected, setDaySelected] = useState(0);
     const [date,setDate] = useState([1,1]);
 
   // let genderS = Array.from(document.getElementsByName("genderS")).find(r => r.checked).value;
@@ -54,8 +75,8 @@ return (
         <span className="icon is-left">
           <i className="fa fa-user" style={{ marginRight: "10px" }} />
         </span>
-        <StInput login placeholder="ID"></StInput>
-        <StButton loginCheck>CHECK</StButton>
+        <StInput type="text" login placeholder="ID"></StInput>
+        <StButton type="button" loginCheck>CHECK</StButton>
         <br />
         <span className="icon is-small is-left">
           <i className="fa fa-lock" style={{ marginRight: "10px" }} />
@@ -73,15 +94,20 @@ return (
         <StInput join placeholder="NICKNAME" type="text"></StInput>
         <br />
         <span className="icon is-small is-left">
-          <i className="fa fa-calendar" style={{ marginRight: "10px" }} />
+          <i className="fa fa-calendar" style={{ marginRight: "5px" }} />
         </span>
-        <StInput login type="date"></StInput>
-        <StDiv bday>B/DAY</StDiv>
+        <StDiv bday>BIRTHDAY</StDiv>
+        <select name="monthSelected" onChange={(e) => handleChange1(e)}>
+    {month.map((arrayItem,index) => <option key={index}value={arrayItem}>{arrayItem}</option>)}
+    </select>
+    <select name="daySelected" onChange={(e) => handleChange2(e)}>
+    {day.map((arrayItem,idx) => <option key={idx} value={arrayItem}>{arrayItem}</option>)}
+    </select>
         <br />
-          <i className="fa fa-female" style={{ marginRight: "10px" }} />
+          <label htmlFor="F"><i className="fa fa-female" style={{ marginRight: "10px" }} /></label>
         <StInput gender id="F" type="radio" name="genders" value={gender} onChange={onChangeGen}/>
-          <i className="fa fa-male" style={{ marginRight: "10px" }} />
-        <StInput gender id="M" type="radio" name="genders" value={gender} onChange={onChangeGen} checked/>
+         <label htmlFor="M"><i className="fa fa-male" style={{ marginRight: "10px" }} /></label>
+        <StInput gender id="M" type="radio" name="genders" value={gender} onChange={onChangeGen}/>
         <br/>
         <StButton join>JOIN</StButton>
       </StForm>
