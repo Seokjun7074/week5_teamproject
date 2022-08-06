@@ -4,6 +4,7 @@ import Router from "./Router";
 
 import Login from "./pages/login/Login";
 import Join from "./pages/login/Join";
+// import CustomButton from "./components/CustonButton";
 
 function App() {
   return (
@@ -11,10 +12,7 @@ function App() {
       <Router />
       {/* <Login/> */}
       {/* <Join/> */}
-
-
-
-    </ThemeProvider >
+    </ThemeProvider>
   );
 }
 
