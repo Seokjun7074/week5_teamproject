@@ -15,7 +15,6 @@ const PostPagination = () => {
   const startIdx = (curPage - 1) * limit;
   const totalPage = Math.ceil(post.length / limit);
   // 데이터를 여기서 fetch 해와야하나..?
-  console.log(curPage);
 
   return (
     <PostPaginationWrapper>
