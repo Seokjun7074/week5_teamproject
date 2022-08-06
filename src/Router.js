@@ -4,7 +4,7 @@ import Join from "./pages/login/Join";
 import Login from "./pages/login/Login";
 import Main from "./pages/main/Main";
 import MyPage from "./components/MyPage/MyPage";
-import Layout from "./components/Detail/Layout";
+import Layout from "./components/detail/Layout";
 const Router = () => {
   return (
     <BrowserRouter>

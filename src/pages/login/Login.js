@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import "./style.css";
 import { StForm, StWrap, StWrapInner, StInput, StButton } from './styleCompo';
 // import ReactPlayer from 'react-player';
@@ -12,7 +12,9 @@ const Login = () => {
 
     const OnSubmitHandler = (e) =>{
         e.preventDefault();
-        console.log(e.current);
+        // console.log(e.current);
+   
+        
     }
 
     const [id, setId] = useState(null);
@@ -23,9 +25,9 @@ const Login = () => {
 <StWrap>
 <video autoPlay muted loop
     src="https://pixabay.com/ko/videos/download/video-28236_medium.mp4"
-    height="100%"/>
+    width="100%"/>
     <StWrapInner login>
-        <h1 style={{margin: "50px",fontSize: "7vh"}}>CAFE JOA</h1>
+        <h1 style={{margin: "50px"}}>CAFE JOA</h1>
         <StForm onSubmit={OnSubmitHandler}>
         <span className="icon is-left"><i className="fa fa-user" style={{marginRight: "10px"}}/></span>
         <StInput login placeholder='ID'></StInput>

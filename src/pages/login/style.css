@@ -1,4 +1,5 @@
 /* 로그인, 회원가입 아이콘 불러올시 필요 font-awesome v4.7.0 */
+/* https://fontawesome.com/v4/icons/ */
 @import url("//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");
 body::-webkit-scrollbar {
     width: 15px; /* 스크롤바의 너비 */
