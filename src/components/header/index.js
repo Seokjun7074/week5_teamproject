@@ -6,12 +6,17 @@ import {
   NavMypage,
   NavLogin,
 } from "./style";
+import { Link, useNavigate } from "react-router-dom";
 
 const Header = () => {
+  const navigate = useNavigate();
+
   return (
     <HeaderWrapper>
       <Navigator>
-        <div>로고</div>
+        <Link to={"/"}>
+          <div>로고</div>
+        </Link>
         <NavRight>
           <NavMypage>마이페이지</NavMypage>
           <NavLogin>로그인/회원가입</NavLogin>
