@@ -13,8 +13,8 @@ const Main = () => {
 
   return (
     <MainWrapper>
-      <Header></Header>
-      <PostPagination></PostPagination>
+      <Header />
+      <PostPagination />
       <Modal visible={modalToggel} closeModal={closeModal}>
         <h1>모달창입니다.</h1>
       </Modal>

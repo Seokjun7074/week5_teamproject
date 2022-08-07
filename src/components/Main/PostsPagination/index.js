@@ -7,6 +7,7 @@ import {
 import { dummyData } from "./dummy";
 import PostCard from "../PostCard";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const PostPagination = () => {
   const [post, setPost] = useState(dummyData); // 전체 게시물 데이터
@@ -20,7 +21,11 @@ const PostPagination = () => {
     <PostPaginationWrapper>
       <PaginationContainer>
         {post.slice(startIdx, startIdx + limit).map((data) => {
-          return <PostCard key={data.id}>{data.id}</PostCard>;
+          return (
+            <Link to={"detail"}>
+              <PostCard key={data.id}>{data.id}</PostCard>
+            </Link>
+          );
         })}
       </PaginationContainer>
       <PaginationNavigator>
