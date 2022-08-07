@@ -6,11 +6,6 @@ const Layout = (props) => {
 
   return (
     <MainWrap>
-      <Header>
-        <Button>카페조아</Button>
-        <Button>마이페이지</Button>
-        <Button>로그아웃</Button>
-      </Header>
       <ContentWrap>
         <CafeImage src="https://i.pinimg.com/564x/de/cb/ff/decbff83d65b9bfbbbd3a3ad68420414.jpg" />
         <CafeInfo>
@@ -28,47 +23,6 @@ const Layout = (props) => {
           <button>등록</button>
         </div>
         <div>
-          <Review>
-            <ExitButton>X</ExitButton>
-            <div style={{ display: "flex" }}>
-              <div style={{ color: "red", textAlign: "left" }}>dudgns5845</div>
-              <div style={{ marginLeft: "10px" }}>{now}</div>
-            </div>
-            <div>카페가 정말 이쁩니다!!</div>
-          </Review>
-          <Review>
-            <ExitButton>X</ExitButton>
-            <div style={{ display: "flex" }}>
-              <div style={{ color: "red", textAlign: "left" }}>dudgns5845</div>
-              <div style={{ marginLeft: "10px" }}>{now}</div>
-            </div>
-            <div>카페가 정말 이쁩니다!!</div>
-          </Review>
-          <Review>
-            <ExitButton>X</ExitButton>
-            <div style={{ display: "flex" }}>
-              <div style={{ color: "red", textAlign: "left" }}>dudgns5845</div>
-              <div style={{ marginLeft: "10px" }}>{now}</div>
-            </div>
-            <div>카페가 정말 이쁩니다!!</div>
-          </Review>
-          <Review>
-            <ExitButton>X</ExitButton>
-            <div style={{ display: "flex" }}>
-              <div style={{ color: "red", textAlign: "left" }}>dudgns5845</div>
-              <div style={{ marginLeft: "10px" }}>{now}</div>
-            </div>
-            <div>카페가 정말 이쁩니다!!</div>
-          </Review>
-          <Review>
-            <ExitButton>X</ExitButton>
-            <div style={{ display: "flex" }}>
-              <div style={{ color: "red", textAlign: "left" }}>dudgns5845</div>
-              <div style={{ marginLeft: "10px" }}>{now}</div>
-            </div>
-            <div>카페가 정말 이쁩니다!!</div>
-          </Review>
-
           <Review>
             <ExitButton>X</ExitButton>
             <div style={{ display: "flex" }}>
@@ -122,16 +76,7 @@ const CafeInfo = styled.div`
     font-size: ${(props) => props.theme.fontSize.button};
   }
 `;
-const Header = styled.div`
-  display: flex;
-  flex-direction: row;
-  background-color: #ca965c;
-  align-items: center;
-  justify-content: space-around;
 
-  height: 50px;
-  width: 100%;
-`;
 const Button = styled.button`
   /* background-color: greenyellow; */
   color: black;
