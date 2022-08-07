@@ -5,5 +5,5 @@ export const PostCardWrapper = styled.div`
   height: 250px;
   border-radius: 10px;
   background-color: tomato;
-  /* margin: 10px; */
+  cursor: pointer;
 `;
