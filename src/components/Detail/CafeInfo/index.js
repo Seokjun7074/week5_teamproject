@@ -1,7 +1,8 @@
 import React from "react";
 import { CafeImage, MainWrap, CafeInfoWrap, EditButton } from "./style";
 import { useState } from "react";
-const CafeInfo = () => {
+
+const CafeInfo = (props) => {
 
     const [isEdit, SetEdit] = useState(false);
 
