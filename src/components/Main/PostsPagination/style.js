@@ -9,10 +9,13 @@ export const PostPaginationWrapper = styled.div`
 `;
 
 export const PaginationContainer = styled.div`
+  width: 100%;
   display: grid;
   grid-template-columns: repeat(4, minmax(300px, auto));
   flex-wrap: wrap;
-  justify-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  margin-top: 20px;
 `;
 
 export const PaginationNavigator = styled.div`

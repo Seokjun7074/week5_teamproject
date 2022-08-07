@@ -3,6 +3,7 @@ import PostPagination from "../../components/Main/PostsPagination";
 import { CustomButton } from "../../components/CustomButton";
 import Modal from "../../components/modal";
 import { useState } from "react";
+import Header from "../../components/header";
 const Main = () => {
   // 모달창 토글부분
   const [modalToggel, setModlaToggle] = useState(false);
@@ -12,6 +13,7 @@ const Main = () => {
 
   return (
     <MainWrapper>
+      <Header></Header>
       <PostPagination></PostPagination>
       <Modal visible={modalToggel} closeModal={closeModal}>
         <h1>모달창입니다.</h1>
