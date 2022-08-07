@@ -4,7 +4,8 @@ import Join from "./pages/login/Join";
 import Login from "./pages/login/Login";
 import Main from "./pages/main/Main";
 import MyPage from "./components/MyPage/MyPage";
-import Layout from "./components/detail/Layout";
+
+import Detail from "./pages/detail/Detail";
 
 const Router = () => {
   return (
@@ -14,7 +15,7 @@ const Router = () => {
         <Route exact path="/login" element={<Login />} />
         <Route exact path="/join" element={<Join />} />
         <Route exact path="/mypage" element={<MyPage />} />
-        <Route exact path="/detail" element={<Layout />} />
+        <Route exact path="/detail" element={<Detail />} />
       </Routes>
     </BrowserRouter>
   );
