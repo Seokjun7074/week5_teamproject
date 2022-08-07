@@ -1,9 +1,9 @@
 import styled from "styled-components";
 
 export const PostCardWrapper = styled.div`
-  width: 200px;
-  height: 200px;
+  width: 250px;
+  height: 250px;
   border-radius: 10px;
   background-color: tomato;
-  margin: 5px;
+  /* margin: 10px; */
 `;
