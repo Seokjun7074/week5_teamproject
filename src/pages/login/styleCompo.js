@@ -58,7 +58,7 @@ export const StInput = styled.input`
   &:focus {
     outline: 2px solid #f896d8;
   }
-  
+
   // login inputs, using also in join.jsx
   ${(props) =>
     props.login &&
@@ -89,37 +89,39 @@ ${(props) =>
 `;
 
 export const StButton = styled.button`
-height: 40px;
-border-radius: 10px;
-color: white;
-background-color : #564592;
-border: none;
-&:hover {
-  background-color: #ca7df9;
-}
+  height: 40px;
+  border-radius: 10px;
+  color: white;
+  background-color: #564592;
+  border: none;
+  &:hover {
+    background-color: #ca7df9;
+  }
 
-// login  Button
-${(props) =>
-  props.login &&
-  `
+  // login  Button
+  ${(props) =>
+    props.login &&
+    `
   width: 290px;
-    margin-top: 10px;
-    font-weight : bold;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-weight : bold;
       `}
-    //  join Button
+  //  join Button
     ${(props) =>
-        props.join &&
-        `
-        width: 350px;
-        margin-top: 10px;
-        font-weight : bold;
-       
+    props.join &&
+    `
+  width: 350px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-weight : bold;
+  
         `}
 
   // login Check Button
 ${(props) =>
     props.loginCheck &&
-`
+    `
     font-size : 10px;
     margin: 5px;
     width: 50px;
@@ -127,26 +129,39 @@ ${(props) =>
     `}
 `;
 
-export const StSpan = styled.span`
-// Common
-font-size : 15px;
-color: #474747;
-border: none;
+export const StSpan = styled.div`
+  // Common
+  font-size: 15px;
+  color: #474747;
+  border: none;
 
-// fix birthday ButtonSt span
-${(props) =>
-    props.bday && `
-    margin-right:30px;
-    padding:10px 3px 10px 3px;
-    `}
-    
+  // fix birthday ButtonSt span
   ${(props) =>
-        props.back && `
-        font-size : 13px;
-        &:hover {
-          text-decoration-line: line-through;
-          text-decoration-style: solid 
+    props.bday &&
+    `
+  margin-right:30px;
+  padding:10px 3px 10px 3px;
+`}
+
+  ${(props) =>
+    props.back &&
+    `
+  font-size : 13px;
+  &:hover {
+  text-decoration-line: line-through;
+  text-decoration-style: solid 
         }
         `}
-`
+
+  
+  ${(props) =>
+    props.join &&
+    `
+    font-size : 14px;
+  &:hover {
+    font-weight: bold;
+    background-color: rgba(255, 255, 255, 0.6);
+        }
+        `}
+`;
 
