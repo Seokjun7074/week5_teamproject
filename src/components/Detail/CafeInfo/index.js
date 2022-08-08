@@ -5,14 +5,14 @@ import { useState } from "react";
 const CafeInfo = (props) => {
 
     const [isEdit, SetEdit] = useState(false);
-
+    const [isHeart, SetHeart] = useState(false);
 
     const [title, SetTitle] = useState("숭실마루");
     const [address, SetAddress] = useState("서울특별시 동작구 XXX");
     const [phone, SetPhone] = useState("02-XXX-XXXX");
     const [time, SetTime] = useState("07시~20시");
     const [image, SetImage] = useState("https://i.pinimg.com/564x/de/cb/ff/decbff83d65b9bfbbbd3a3ad68420414.jpg");
-
+    const [heart, SetHeartCount] = useState(1234);
 
     // const CafeData = {
     //     title: "숭실마루",
@@ -56,6 +56,14 @@ const CafeInfo = (props) => {
                         !isEdit ? <span>{time}</span> : <input type={"text"} placeholder={time} onChange={(e) => SetTime(e.target.value)} />
                     }
                 </div>
+                <div>
+                    <button onClick={(e) => {
+                        SetHeart(!isHeart);
+                        e.target.innerText = isHeart ? "♥️" : "♡"
+                    }}>♥️</button>
+                    <span>{heart}</span>
+                </div>
+
             </CafeInfoWrap>
         </MainWrap >
     );
