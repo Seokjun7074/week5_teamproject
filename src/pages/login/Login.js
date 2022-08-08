@@ -24,7 +24,10 @@ const Login = () => {
   return (
 <StWrap>
 <video autoPlay muted loop
-    src="https://pixabay.com/ko/videos/download/video-28236_medium.mp4"
+    // 4.0MB > 953kb
+    // src="https://pixabay.com/ko/videos/download/video-28236_medium.mp4"
+    // src="https://pixabay.com/ko/videos/download/video-28236_tiny.mp4"
+    src="/videos/login.mp4"
     width="100%"/>
     <StWrapInner login>
         <h1 style={{margin: "50px"}}>CAFE JOA</h1>

@@ -1,16 +1,94 @@
-/* 로그인, 회원가입 아이콘 불러올시 필요 font-awesome v4.7.0 */
+/* font-awesome v4.7.0 */
 /* https://fontawesome.com/v4/icons/ */
 @import url("//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");
-body::-webkit-scrollbar {
-    width: 15px; /* 스크롤바의 너비 */
+/* Change Icons to Material Icon */
+/* https://fonts.google.com/icons?icon.set=Material+Icons&icon.style=Filled */
+/* https://developers.google.com/fonts/docs/material_icons#icon_font_for_the_web */
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+@import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap");
+
+* {
+    font-family: Roboto;
 }
 
-body::-webkit-scrollbar-thumb {
-    height: 30%; /* 스크롤바의 길이 */
-    background: #ca7df9; /* 스크롤바의 색상 */
+
+*::-webkit-scrollbar {
+    width: 15px; /* scroll width */
+}
+
+*::-webkit-scrollbar-thumb {
+    height: 30%; /* scrollbar height*/
+    background: #ca7df9; /* scrollbar color */
     border-radius: 10px;
 }
 
-body::-webkit-scrollbar-track {
-    background: white; /*스크롤바 뒷 배경 색상*/
+*::-webkit-scrollbar-track {
+    background: none; /*scollbar background color*/
 }
+
+/* select {
+    padding: 3px 12px;
+    outline: none;
+    width: 250px;
+    margin-bottom: 20px;
+  }
+  
+  select.widthHeight::-webkit-scrollbar {
+    width: 14px;
+    height: 14px;
+  }
+  
+  select.style::-webkit-scrollbar-track {
+    border: rgb(180, 180, 180);
+    background-color: #ff6536;
+  }
+  
+  select.style::-webkit-scrollbar-thumb {
+    background-color: #3677ef;
+    border: 1px solid rgb(193, 193, 193);
+  } */
+
+
+/*Material Icons*/
+.material-icons {
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px;  /* Preferred icon size */
+    display: inline-block;
+    line-height: 1;
+    text-transform: none;
+    letter-spacing: normal;
+    word-wrap: normal;
+    white-space: nowrap;
+    direction: ltr;
+  
+    /* Support for all WebKit browsers. */
+    -webkit-font-smoothing: antialiased;
+    /* Support for Safari and Chrome. */
+    text-rendering: optimizeLegibility;
+  
+    /* Support for Firefox. */
+    -moz-osx-font-smoothing: grayscale;
+  
+    /* Support for IE. */
+    font-feature-settings: 'liga';
+  }
+
+  /* Rules for sizing the icon. */
+.material-icons.md-18 { font-size: 18px; }
+.material-icons.md-24 { font-size: 24px; }
+.material-icons.md-36 { font-size: 36px; }
+.material-icons.md-48 { font-size: 48px; }
+
+/* Rules for using icons as black on a light background. */
+.material-icons.md-dark { color: rgba(0, 0, 0, 0.54); }
+.material-icons.md-dark.md-inactive { color: rgba(0, 0, 0, 0.26); }
+
+/* Rules for using icons as white on a dark background. */
+.material-icons.md-light { color: rgba(255, 255, 255, 1); }
+.material-icons.md-light.md-inactive { color: rgba(255, 255, 255, 0.3); }
+
+
+/* cursor */
+body{ cursor: url('./cursor/coffee.cur'), auto; width: 50px;}
