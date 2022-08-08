@@ -1,9 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import "./style.css";
-import { StForm, StWrap, StWrapInner, StInput, StButton } from './styleCompo';
+import { StForm, StWrap, StWrapInner, StInput, StButton, StSpan } from './styleCompo';
+import { Link, useNavigate } from "react-router-dom";
 // import ReactPlayer from 'react-player';
 
 const Login = () => {
+    const navigate = useNavigate();
+
     const onKeyPress = (e) => {
         if(e.key === 'Enter') {
           console.log("Enter!");
@@ -13,8 +16,6 @@ const Login = () => {
     const OnSubmitHandler = (e) =>{
         e.preventDefault();
         // console.log(e.current);
-   
-        
     }
 
     const [id, setId] = useState(null);
@@ -40,7 +41,8 @@ const Login = () => {
         <br/>
         <StButton login>LOGIN</StButton>
         </StForm>
-    </StWrapInner>
+        <StSpan join onClick={()=>navigate("/join")}>Join</StSpan>
+</StWrapInner>
 </StWrap>
   )
 }

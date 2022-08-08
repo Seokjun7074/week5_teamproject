@@ -4,13 +4,15 @@ import { StForm, StWrap, StWrapInner, StInput, StButton, StSpan, StSelect, StCen
 import Swal from 'sweetalert2'
 import withReactContent from 'sweetalert2-react-content'
 import { useParams } from 'react-router-dom';
+import {useNavigate } from "react-router-dom";
+
 // import ReactPlayer from 'react-player';
 // Added lib list
 // yarn add sweetalert2 sweetalert2-react-content
 
 const MySwal = withReactContent(Swal);
-// const history = History();
 const Join = () => {
+  const navigate = useNavigate();
   const month = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
   const day = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,24,25,26,27,28,29,30,31];
   
@@ -117,83 +119,124 @@ const onTest = (e) =>{
 
 
   return (
-  <StWrap>
- 
-    <video
-      autoPlay
-      muted
-      loop
-      // src="https://pixabay.com/ko/videos/download/video-2142_tiny.mp4"
-      src="/videos/join.mp4"
-      width="100%" />
-    <StWrapInner join>
-      <h1 style={{ margin: "30px" }}>CAFE JOA</h1>
-      <StForm onSubmit={OnSubmitHandler}>
-        {/* <span className="icon is-left">
+    <StWrap>
+      <video
+        autoPlay
+        muted
+        loop
+        // src="https://pixabay.com/ko/videos/download/video-2142_tiny.mp4"
+        src="/videos/join.mp4"
+        width="100%"
+      />
+      <StWrapInner join>
+        <h1 style={{ margin: "30px" }}>CAFE JOA</h1>
+        <StForm onSubmit={OnSubmitHandler}>
+          {/* <span className="icon is-left">
           <i className="fa fa-user" style={{ marginRight: "10px" }} />
         </span> */}
-        {/* style={{display:'table-cell', verticalAlign:'middle'}} */}
-        <StCen>
-        <span className="material-icons">account_box</span>
-        <StInput name='id' type="text" login placeholder="ID"></StInput>
-        <StButton type="button" loginCheck>CHECK</StButton>
-        </StCen>
-        <br />
-        {/* <span className="icon is-small is-left">
+          {/* style={{display:'table-cell', verticalAlign:'middle'}} */}
+          <StCen>
+            <span className="material-icons">account_box</span>
+            <StInput name="id" type="text" login placeholder="ID"></StInput>
+            <StButton type="button" loginCheck>
+              CHECK
+            </StButton>
+          </StCen>
+          <br />
+          {/* <span className="icon is-small is-left">
           <i className="fa fa-lock" style={{ marginRight: "10px" }} />
         </span> */}
-        <StCen>
-        <span className="material-icons">lock</span>
-        <StInput join name='password' placeholder="PASSWORD" type="password"></StInput>
-        </StCen>
-        <br />
-        {/* <span className="icon is-small is-left">
+          <StCen>
+            <span className="material-icons">lock</span>
+            <StInput
+              join
+              name="password"
+              placeholder="PASSWORD"
+              type="password"
+            ></StInput>
+          </StCen>
+          <br />
+          {/* <span className="icon is-small is-left">
           <i className="fa fa-lock" style={{ marginRight: "10px" }} />
         </span> */}
-        <StCen>
-        <span className="material-icons">lock</span>
-        <StInput join name='re_password' placeholder="CONFIRM-PASSWORD" type="password"></StInput>
-        </StCen>
-        <br />
-        {/* <span className="icon is-small is-left">
+          <StCen>
+            <span className="material-icons">lock</span>
+            <StInput
+              join
+              name="re_password"
+              placeholder="CONFIRM-PASSWORD"
+              type="password"
+            ></StInput>
+          </StCen>
+          <br />
+          {/* <span className="icon is-small is-left">
           <i className="fa fa-address-card-o" style={{ marginRight: "6px" }} />
         </span> */}
-        <StCen>
-        <span className="material-icons">face_retouching_natural</span>
-        <StInput join name='nickName' placeholder="NICKNAME" type="text"></StInput>
-        </StCen>
-        <br />
-        {/* <span className="icon is-small is-left">
+          <StCen>
+            <span className="material-icons">face_retouching_natural</span>
+            <StInput
+              join
+              name="nickName"
+              placeholder="NICKNAME"
+              type="text"
+            ></StInput>
+          </StCen>
+          <br />
+          {/* <span className="icon is-small is-left">
           <i className="fa fa-calendar" style={{ marginRight: "5px" }} />
         </span> */}
-        <StCen>
-         <span className="material-icons">calendar_month</span>
-        <StSpan bday>BIRTHDAY</StSpan>
-        <select birth="true" name="monthSelected">
-    {month.map((arrayItem,index) => <option key={index}value={arrayItem}>{arrayItem}</option>)}
-    </select>
-    <select birth="true" name="daySelected">
-    {
-    day.map((arrayItem,idx) =>
-     <option key={idx} value={arrayItem}>{arrayItem}</option>)
-     }
-    </select>
-    </StCen>
-        <br />
-        <StCen>
-         <label htmlFor="F"><span className="material-icons">woman_2</span></label>
-        <StInput gender id="F" type="radio" name="genders" value={gender} onChange={onChangeGen}/>
-         <label htmlFor="M"><span className="material-icons">man_2</span></label>
-        <StInput gender id="M" type="radio" name="genders" value={gender} onChange={onChangeGen}/>
-        <br/>
-        </StCen>
-        <StButton join>JOIN</StButton>
-      </StForm>
-      <br/>
-      <StSpan onClick={onTest} back>Back</StSpan>
-    </StWrapInner>
-  </StWrap>
-);
+          <StCen>
+            <span className="material-icons">calendar_month</span>
+            <StSpan bday>BIRTHDAY</StSpan>
+            <select birth="true" name="monthSelected">
+              {month.map((arrayItem, index) => (
+                <option key={index} value={arrayItem}>
+                  {arrayItem}
+                </option>
+              ))}
+            </select>
+            <select birth="true" name="daySelected">
+              {day.map((arrayItem, idx) => (
+                <option key={idx} value={arrayItem}>
+                  {arrayItem}
+                </option>
+              ))}
+            </select>
+          </StCen>
+          <br />
+          <StCen>
+            <label htmlFor="F">
+              <span className="material-icons">woman_2</span>
+            </label>
+            <StInput
+              gender
+              id="F"
+              type="radio"
+              name="genders"
+              value={gender}
+              onChange={onChangeGen}
+            />
+            <label htmlFor="M">
+              <span className="material-icons">man_2</span>
+            </label>
+            <StInput
+              gender
+              id="M"
+              type="radio"
+              name="genders"
+              value={gender}
+              onChange={onChangeGen}
+            />
+            <br />
+          </StCen>
+          <StButton join>JOIN</StButton>
+        </StForm>
+        <StSpan onClick={()=>navigate(-1)} back>
+          Back
+        </StSpan>
+      </StWrapInner>
+    </StWrap>
+  );
 }
 export default Join;
 
