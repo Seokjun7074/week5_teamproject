@@ -1,18 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { toBeEmpty } from "@testing-library/jest-dom/dist/matchers";
 
 const initialState = {
-  cafeList: [
-    {
-      id: 0,
-      title: "title 1",
-      content: "content 1",
-    },
-    {
-      id: 1,
-      title: "title 2",
-      content: "content 2",
-    },
-  ],
+  cafeList: [],
 };
 
 const cafeSlice = createSlice({

@@ -20,7 +20,7 @@ const Header = () => {
   return (
     <HeaderWrapper>
       <Navigator>
-        <Link to={"/"}>
+        <Link to="/">
           <div>로고</div>
         </Link>
         <NavRight>
