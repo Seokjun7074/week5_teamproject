@@ -67,6 +67,15 @@ export const StInput = styled.input`
   padding-left: 7px;
 `}
 
+// join check input
+${(props) =>
+  props.joinCheck &&
+  `
+width: 250px;
+padding-left: 7px;
+background : ${props.disabled? 'rgba(0,0,0,0.4)': 'none'}
+`}
+
   // join input
 ${(props) =>
     props.join &&
@@ -118,18 +127,19 @@ export const StButton = styled.button`
   
         `}
 
-  // login Check Button
+  // join Check Button
 ${(props) =>
-    props.loginCheck &&
+    props.joinCheck &&
     `
     font-size : 10px;
     margin: 5px;
     width: 50px;
     height: 35px;
+    background-color:${props.disabled?'#ca7df9':''}
     `}
 `;
 
-export const StSpan = styled.div`
+export const StDiv = styled.div`
   // Common
   font-size: 15px;
   color: #474747;
@@ -152,7 +162,6 @@ export const StSpan = styled.div`
   text-decoration-style: solid 
         }
         `}
-
   
   ${(props) =>
     props.join &&
@@ -162,6 +171,12 @@ export const StSpan = styled.div`
     font-weight: bold;
     background-color: rgba(255, 255, 255, 0.6);
         }
+        `}
+  ${(props) =>
+    props.warn &&
+    `
+    font-size : 13px;
+    color: red;
         `}
 `;
 
