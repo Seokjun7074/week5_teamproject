@@ -22,6 +22,6 @@ export default Modal;
 
 // <div>
 //   <Modal visible={modalToggel} closeModal={closeModal}>
-//     여기레 원하는 태그 넣어서 사용
+//     여기에 원하는 태그 넣어서 사용
 //   </Modal>
 // </div>;

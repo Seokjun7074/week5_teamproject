@@ -31,8 +31,11 @@ export default function MyPage() {
         <button >업로드 하기</button>
         <button style={{paddingLeft:"8PX",paddingRight:"8PX",paddingTop:"3px",border: "2px solid gray",borderRadius:"5px"}}onClick={()=>DeleteImage()}>삭제</button>
         </div>
-        <div style={{height:"200px",marginTop:"10px",border: "3px solid gainsboro"}}>
-        <input style={{margin:"10px"}}onChange={onChangeComment} type={"text"}></input>
+        <div style={{flexDirection: "COLUMN"}}>
+        카페 명 :<input style={{marginTop:"20px",marginLeft:"10px",width:"100px",border:"3px solid gainsboro"}}onChange={onChangeComment} type={"text"}></input>
+        카페 주소 :<input style={{marginTop:"20px",marginLeft:"10px",width:"100px",border:"3px solid gainsboro"}}onChange={onChangeComment} type={"text"}></input>
+        전화 번호 :<input style={{marginTop:"20px",marginLeft:"10px",width:"100px",border:"3px solid gainsboro"}}onChange={onChangeComment} type={"text"}></input>
+        영업 시간 :<input style={{marginTop:"20px",marginLeft:"10px",width:"100px",border:"3px solid gainsboro"}}onChange={onChangeComment} type={"text"}></input>
         </div>
         </Modal>
       <Header/>
@@ -55,7 +58,7 @@ export default function MyPage() {
       </ProfileWrap>
         <div style={{textAlign: "justify",fontSize: '20px',textIndent:'240px',marginTop:"40px"}}>my posting</div>
       <BoxList>
-      <Link to={"detail"}>
+      <Link to={"/detail"}>
               <CardBox src="https://i.pinimg.com/564x/de/cb/ff/decbff83d65b9bfbbbd3a3ad68420414.jpg" />
         </Link>
       </BoxList>
