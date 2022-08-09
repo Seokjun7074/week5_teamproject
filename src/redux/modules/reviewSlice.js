@@ -34,7 +34,6 @@ const reviewSlice = createSlice({
         //리뷰 삭제 리듀서
         deleteReview: (state, action) => {
             const idx = action.payload;
-            console.log(idx);
             return {
                 ...state,
                 reviewList: state.reviewList.filter((e) => e.review_id !== idx),

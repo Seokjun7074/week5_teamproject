@@ -14,7 +14,7 @@ import Swal from 'sweetalert2';
 import withReactContent from 'sweetalert2-react-content';
 import { useParams } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
-import {userJoin} from './User';
+import { userJoin } from './User';
 
 // import ReactPlayer from 'react-player';
 // Added lib list
@@ -42,6 +42,7 @@ const Join = () => {
     22, 24, 25, 26, 27, 28, 29, 30, 31,
   ];
 
+
   // State Update for joining
   const [id, setId] = useState('');
   const [pw, setPw] = useState('');
@@ -61,16 +62,15 @@ const Join = () => {
     pw: '',
     nick: '',
     gender: 'female',
-    birth:['May',1],
+    birth: ['May', 1],
   };
 
   const [user, setUser] = useState(initialState);
   const [user2, setUser2] = useState(initialState);
 
-
   // dummy existed ID
   const tmpId = 'hello';
-  
+
   // Validation Check
   // function is_nickname(asValue) {
   //   var regExp = /^(?=.*[a-zA-Z])[-a-zA-Z0-9_.]{2,10}$/;
@@ -97,7 +97,7 @@ const Join = () => {
     setUser2({ ...user2, [name]: value });
   }
 
-  
+
 
   // AutoFocus when using Enter
   const onKeyId = (e) => {
@@ -109,10 +109,10 @@ const Join = () => {
   const onKeyPw = (e) => {
     // enter keyCode
     if (e.keyCode === 13) {
-     if(onChangePw(e)) {
-      document.getElementById('rePw').focus();
-     }else{
-      document.getElementById('pw').focus();
+      if (onChangePw(e)) {
+        document.getElementById('rePw').focus();
+      } else {
+        document.getElementById('pw').focus();
       }
       e.preventDefault();
     }
@@ -120,81 +120,81 @@ const Join = () => {
   const onKeyRePw = (e) => {
     // enter keyCode
     if (e.keyCode === 13) {
-      if(onChangeRePw(e)) {
-       document.getElementById('nick').focus();
-      }else{
-       document.getElementById('rePw').focus();
-       }
-       e.preventDefault();
-     }
+      if (onChangeRePw(e)) {
+        document.getElementById('nick').focus();
+      } else {
+        document.getElementById('rePw').focus();
+      }
+      e.preventDefault();
+    }
   };
-  const onKeyNick = (e) =>{
+  const onKeyNick = (e) => {
     if (e.keyCode === 13) {
-     onChangeNick(e); 
+      onChangeNick(e);
     }
   }
 
   // red alert
   const redAlert = (msg) => {
-  MySwal.fire({
-    title: `${msg}`,
-    icon: 'error',
-  });
-}
-// const{name, value} = e.target;
-// setUser({[name]:value});
+    MySwal.fire({
+      title: `${msg}`,
+      icon: 'error',
+    });
+  }
+  // const{name, value} = e.target;
+  // setUser({[name]:value});
 
-// onSubmit **
+  // onSubmit **
   const onSubmitHandler = (e) => {
     e.preventDefault();
     let tmp = e.target;
     setMonthSelected(tmp.monthSelected?.value);
     setDaySelected(tmp.daySelected?.value);
-    setUser ({
-    id,
-    pw,
-    nick,
-    gender,
-    birth:[monthSelected,daySelected],
+    setUser({
+      id,
+      pw,
+      nick,
+      gender,
+      birth: [monthSelected, daySelected],
     })
     console.log(user.pw);
     console.log(user.birth);
     console.log(user2.pw);
-     
+
     // console.log(e.target.id.value);
     // console.log(e.target.password.value);
     // console.log(e.target.monthSelected.value);
     // console.log(e.target.daySelected.value);
     // console.log(e.target.genders.value);
 
-  // Reg
-  let numReg = pw.search(/[0-9]/g);
-  let engReg = pw.search(/[a-z]/ig);
-  let speReg = pw.search(/[!@#$%^&*]/gi);
-    if(pw===''){
+    // Reg
+    let numReg = pw.search(/[0-9]/g);
+    let engReg = pw.search(/[a-z]/ig);
+    let speReg = pw.search(/[!@#$%^&*]/gi);
+    if (pw === '') {
       setWarn('비밀번호를 입력해주세요.');
       redAlert(warn);
-    } else if(4 > pw.length || pw.length > 20){
+    } else if (4 > pw.length || pw.length > 20) {
       setWarn('비밀번호 4자리 ~ 20자리 이내로 입력해주세요.');
       redAlert(warn);
-     }else if(numReg < 0 || engReg < 0 || speReg < 0 ){
+    } else if (numReg < 0 || engReg < 0 || speReg < 0) {
       setWarn('비밀번호 영문, 숫자, 특수문자를 혼합하여 입력해주세요.');
       redAlert(warn);
-     }else if(pw !==rePw){
+    } else if (pw !== rePw) {
       setWarn('비밀번호가 일치하지 않습니다.');
       redAlert(warn);
-     }else if(nick===''){
+    } else if (nick === '') {
       setWarn('닉네임을 입력하세요.');
       redAlert(warn);
-     }else {
+    } else {
       setWarn('');
       MySwal.fire({
         title: `Welcome, ${e.target.nickName.value}!`,
         icon: 'success',
       });
 
-  }
-   
+    }
+
   };
 
   // Gender set, use checked to set default
@@ -214,14 +214,14 @@ const Join = () => {
   };
 
   // Nick handler
-  const onChangeNick = (e) =>{
+  const onChangeNick = (e) => {
     let tmp = e.target.value;
-   tmp = tmp.replace(' ', ''); // remove space only
+    tmp = tmp.replace(' ', ''); // remove space only
     setNick(tmp);
-    if(tmp===''){
+    if (tmp === '') {
       setWarn('닉네임을 정해주세요.');
       e.preventDefault();
-    }else{
+    } else {
       setWarn('');
       userFunc(e);
     }
@@ -230,44 +230,44 @@ const Join = () => {
   // Password set, check val light
   const onChangePw = (e) => {
     let tmPw = e.target.value;
-    tmPw.replace(' ','')
+    tmPw.replace(' ', '')
     setPw(tmPw);// remove space only
     // Var Reg
-  let numReg = tmPw.search(/[0-9]/g);
-  let engReg = tmPw.search(/[a-z]/ig);
-  let speReg = tmPw.search(/[!@#$%^&*]/gi);
-    if(e.target.value===''){
+    let numReg = tmPw.search(/[0-9]/g);
+    let engReg = tmPw.search(/[a-z]/ig);
+    let speReg = tmPw.search(/[!@#$%^&*]/gi);
+    if (e.target.value === '') {
       setWarn('비밀번호를 입력해주세요.');
       return false;
-    } else if(4 > tmPw.length || tmPw.length > 20){
+    } else if (4 > tmPw.length || tmPw.length > 20) {
       setWarn('4자리 ~ 20자리 이내로 입력해주세요.');
       return false;
-     }else if(numReg < 0 || engReg < 0 || speReg < 0 ){
+    } else if (numReg < 0 || engReg < 0 || speReg < 0) {
       setWarn('영문, 숫자, 특수문자를 혼합하여 입력해주세요.');
       return false;
-     }else if(rePw !==tmPw){
+    } else if (rePw !== tmPw) {
       setWarn('비밀번호가 일치하지 않습니다.');
       return true;
-     }else {
-       setWarn('')
-       userFunc(e);
-       return true;
-      
+    } else {
+      setWarn('')
+      userFunc(e);
+      return true;
+
+    }
   }
-}
- 
+
   // Re-Password set, check val light
   const onChangeRePw = (e) => {
     let tmPw = e.target.value;
     setRePw(tmPw);
-    if(e.target.value===''){
+    if (e.target.value === '') {
       setWarn('비밀번호를 입력해주세요.');
       return false;
     } else if (pw !== tmPw) {
       setWarn('비밀번호가 일치하지 않습니다.');
       return false;
-      }
-    if(pw === tmPw){
+    }
+    if (pw === tmPw) {
       setWarn('');
       userFunc(e);
       return true;
@@ -315,12 +315,12 @@ const Join = () => {
     e.preventDefault();
   };
 
-  const is_pw = (e) =>{
+  const is_pw = (e) => {
     if (warn === '') {
-       document.getElementById('warn').style.display = 'none';
-    } 
+      document.getElementById('warn').style.display = 'none';
+    }
     userFunc(e);
-  }; 
+  };
 
   // 2. confirmPwInput, disabled=true, if pw.trim()!=='' >> disabled=false
   // 3. birthday, if selected Feb, show day untill 29, and others are 30 or 31

@@ -8,7 +8,6 @@ import { useSelector } from "react-redux";
 const Detail = () => {
 
     const reviewList = useSelector(state => state.review.reviewList);
-    console.log(reviewList);
 
     return (
         <div>
