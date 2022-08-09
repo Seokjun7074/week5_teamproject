@@ -1,5 +1,5 @@
 import { configureStore } from "@reduxjs/toolkit";
-import cafeReducer from "./slice";
+import cafeReducer from "./modules/cafeSlice";
 
 const store = configureStore({
   reducer: {
