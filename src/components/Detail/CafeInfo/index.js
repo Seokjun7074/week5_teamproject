@@ -5,9 +5,11 @@ import { useParams } from "react-router-dom";
 const CafeInfo = (props) => {
   const cafe_id = useParams().cafe_id;
   console.log(cafe_id);
+
   const [isEdit, SetEdit] = useState(false);
   const [isHeart, SetHeart] = useState(false);
 
+  // <<<<<<< HEAD
   const [title, SetTitle] = useState("숭실마루");
   const [address, SetAddress] = useState("서울특별시 동작구 XXX");
   const [phone, SetPhone] = useState("02-XXX-XXXX");
@@ -16,14 +18,6 @@ const CafeInfo = (props) => {
     "https://i.pinimg.com/564x/de/cb/ff/decbff83d65b9bfbbbd3a3ad68420414.jpg"
   );
   const [heart, SetHeartCount] = useState(1234);
-
-  // const CafeData = {
-  //     title: "숭실마루",
-  //     address: "서울특별시 동작구 XXX",
-  //     phone: "02-XXX-XXXX",
-  //     time: "07시~20시",
-  //     image: "https://i.pinimg.com/564x/de/cb/ff/decbff83d65b9bfbbbd3a3ad68420414.jpg"
-  // }
 
   const onClickEditBtn = (e) => {
     if (isEdit) alert("수정하시겠습니까?");
