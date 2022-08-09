@@ -91,3 +91,8 @@
 /* cursor */
 body{ cursor: url('./cursor/coffee.cur'), auto; width: 50px;}
 
+/* sweet alert2 bg blured effect*/
+body.swal2-shown > [aria-hidden="true"] {
+  transition: 0.1s filter;
+  filter: blur(10px);
+}

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import "./style.css";
-import { StForm, StWrap, StWrapInner, StInput, StButton, StSpan } from './styleCompo';
+import { StForm, StWrap, StWrapInner, StInput, StButton, StDiv } from './styleCompo';
 import { Link, useNavigate } from "react-router-dom";
 // import ReactPlayer from 'react-player';
 
@@ -41,7 +41,7 @@ const Login = () => {
         <br/>
         <StButton login>LOGIN</StButton>
         </StForm>
-        <StSpan join onClick={()=>navigate("/join")}>Join</StSpan>
+        <StDiv join onClick={()=>navigate("/join")}>Join</StDiv>
 </StWrapInner>
 </StWrap>
   )
