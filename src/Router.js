@@ -14,7 +14,7 @@ const Router = () => {
         <Route exact path="/login" element={<Login />} />
         <Route exact path="/join" element={<Join />} />
         <Route exact path="/mypage" element={<MyPage />} />
-        <Route exact path="/detail" element={<Detail />} />
+        <Route exact path="/detail/:cafe_id" element={<Detail />} />
       </Routes>
     </BrowserRouter>
   );

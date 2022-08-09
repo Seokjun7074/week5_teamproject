@@ -3,6 +3,7 @@ import { toBeEmpty } from "@testing-library/jest-dom/dist/matchers";
 
 const initialState = {
   cafeList: [],
+  tmp: [],
 };
 
 const cafeSlice = createSlice({

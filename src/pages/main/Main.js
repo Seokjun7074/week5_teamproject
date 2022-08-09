@@ -14,11 +14,6 @@ const Main = () => {
     setModlaToggle(false);
   };
 
-  // Redux store에서 데이터 가져오기
-  const cafeList = useSelector((state) => {
-    return state.cafe.cafeList;
-  });
-  // console.log(cafeList);
   return (
     <MainWrapper>
       <Header />

@@ -44,7 +44,7 @@ const CafeForm = ({ visible, closeModal }) => {
   };
 
   const onSubmitHandler = () => {
-    console.log(cafeInfo);
+    // console.log(cafeInfo);
     const newDate = {
       ...cafeInfo,
       cafe_id: new_cafe_id,
