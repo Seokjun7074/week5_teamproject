@@ -1,132 +1,138 @@
-import React from "react"
+import React from "react";
 import styled from "styled-components";
-export default function MyPage(){
-    return(
-    
-        <Mainwrap>
-            <Header>
-                <Span></Span> 
-                <a>sign out</a>
-            </Header>
-        <BackGround>
-            <H1>my profile(뒷배경 커피 사진)</H1>
-        </BackGround>
-        <ProfileWrap>
-        <Layer>
-            <Photo>
-            </Photo>
-            <Status>
-                <h5>name :</h5>
-                <h5>age :</h5>
-                <h5>sex :</h5>
-                <Button>개인정보 수정</Button>
-                <Button>업로드 하기</Button>
-                <Button>포스팅 관리</Button>
-                <Button>로그아웃 하기</Button>
-            </Status>
-        </Layer>
-    </ProfileWrap>
-            <Post>
-            <a>my posting</a>
-            </Post>
-    <BoxList>
-        <CardBox>
-        </CardBox>
-    </BoxList>
-    </Mainwrap>
-    )
-}
-const Mainwrap=styled.div
-    `width:100%;
-     min-width:800px;
-     max-width:1800px;
-     height:100%;
-     display: flex;
-     flex-direction: column;
-     text-indent:300px;
-     text-transform: capitalize;
-     text-align: left;
-     `
-const Header=styled.div
-    `flex-direction: row;
-     text-align: right;
-     background-color:beige;
-     height: 120px;
-     width: 100%;
-    `
-const Span=styled.div
-   `box-sizing: content-box;
-    background-color:white;
-    width: 90px;
-    height: 90px;
-    margin-left: 300px;
-    margin-top:10px;
-    border-radius: 100%;
-    `
-const BackGround=styled.div
-    `width:100%;
-     height:120px;
-     background-color:green;`
-const H1=styled.div
-   `line-height:180px;
-    font-size:35px;
-    color:white;
-    `
-const Layer=styled.div
-    `background-color:gainsboro;
-    margin:50px 260px 30px 0px;
-    width:50%;
-    height:280px;
-    display:flex;
-    border-radius: 10px;
-    `
- const Status=styled.div
-    `font-size:30px;
-    height: 280px;
-    padding: auto;
-    margin: 30px 0px 30px 40px;
-    color:black;
-    text-indent:100px;
-    flex-direction:row;
-    `
- const Photo=styled.div
-    `width: 200px;
-    height:200px;
-    border-radius: 100%;
-    background-color: white;
-    text-align: center;
-    line-height: 200px;
-    margin: 30px 100px;
-    `
-const Button=styled.button
-`padding:-20px;
- font-size:15px;
-margin:auto;
+import Header from "../header";
+import { useState } from "react";
+import Modal from "../modal";
+import { Link } from "react-router-dom";
 
+export default function MyPage() {
+  const [modalToggel, setModlaToggle] = useState(false);
+  const closeModal = () => {setModlaToggle(false);};
+  const [fileImage, setFileImage]=useState("");
+  const [comment,setComment]=useState("");
+  const saveImage=(e)=>{
+    setFileImage(URL.createObjectURL(e.target.files[0]));
+  };
+  const DeleteImage = ()=>{
+    URL.revokeObjectURL(fileImage);
+    setFileImage("");
+  };
+  const onChangeComment = (e)=>{
+    setComment(e.target.value)
+  }
+
+  return (
+    <Mainwrap>
+       <Modal visible={modalToggel} closeModal={closeModal}>
+        {fileImage &&(<img alt="sample"src={fileImage} style={{width:"350px",height:"300px",marginTop:"10PX",marginLeft:"20px"}}></img>)}
+        <input style={{position:"absolute", right:"5%"}}type="file"accept="image/*"onChange={saveImage} />
+        <div style={{flexDirection: "column", justifyContent:"space-between"}}>
+        <h3 style={{marginTop:"10px"}}>comment</h3>
+        <button >업로드 하기</button>
+        <button style={{paddingLeft:"8PX",paddingRight:"8PX",paddingTop:"3px",border: "2px solid gray",borderRadius:"5px"}}onClick={()=>DeleteImage()}>삭제</button>
+        </div>
+        <div style={{height:"200px",marginTop:"10px",border: "3px solid gainsboro"}}>
+        <input style={{margin:"10px"}}onChange={onChangeComment} type={"text"}></input>
+        </div>
+        </Modal>
+      <Header/>
+      <BackGround src="https://i.pinimg.com/564x/de/cb/ff/decbff83d65b9bfbbbd3a3ad68420414.jpg"></BackGround>
+      <div style={{color: "white",position: "absolute", lineHeight: "330px",fontSize: "35px", textIndent: "240px"}}>my cafe</div>
+      <ProfileWrap>
+        <Layer>
+          <b style={{position:"absolute",textIndent:'20px',lineHeight: "80px"}}>my 프로필</b>
+          <Photo src="https://i.pinimg.com/564x/de/cb/ff/decbff83d65b9bfbbbd3a3ad68420414.jpg"/>
+          <Status>
+            <h5 style={{marginTop:"60px",marginLeft:"100px"}}>NICKNAME 님</h5>
+            <h5 style={{marginLeft:"100px"}}>반갑습니다.</h5>
+            {/* <h3>age :</h3>
+            <h3>sex :</h3>
+  <h3>birthday :</h3> */}
+            <Button style={{paddingLeft:"30px",paddingRight:"30px", marginLeft:"100px",marginTop:"20PX"}}onClick={()=>{setModlaToggle(true)}}>업로드 하기 </Button>
+            <Button style={{backgroundColor:"black",color:"white"}}onClick={()=>{setModlaToggle(true)}} >개인정보 수정</Button>
+          </Status>
+        </Layer>
+      </ProfileWrap>
+        <div style={{textAlign: "justify",fontSize: '20px',textIndent:'240px',marginTop:"40px"}}>my posting</div>
+      <BoxList>
+      <Link to={"detail"}>
+              <CardBox src="https://i.pinimg.com/564x/de/cb/ff/decbff83d65b9bfbbbd3a3ad68420414.jpg" />
+        </Link>
+      </BoxList>
+    </Mainwrap>
+  );
+}
+const Mainwrap = styled.div`
+  width: 100%;
+  min-width: 800px;
+  max-width: 1800px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  text-transform: capitalize;
+  text-align: left;
 `
-const ProfileWrap=styled.div
-`width: 100%;
+const BackGround = styled.img`
+  background-color: green;
+  height:140px;
+  object-fit:cover;
+`
+const Layer = styled.div`
+  background-color: gainsboro;
+  margin:40px 370px 40px 0px;
+  width: 50%;
+  height: 280px;
+  display: flex;
+  border-radius: 10px;
+`;
+const Status = styled.div`
+  font-size: 30px;
+  height: 280px;
+  padding: auto;
+  color: black;
+  flex-direction: row;
+`;
+const Photo = styled.img`
+  width: 230px;
+  height: 230px;
+  border-radius: 20%;
+  background-color: white;
+  margin-left:100px;
+  margin-top:30px;
+`;
+const Button = styled.button`
+  font-size: 15px;
+  margin-right: 20px;
+  background-color: white;
+  padding-left: 25px;
+  padding-top:10px;
+  padding-bottom:10px;
+  padding-right:25px;
+  border: 3px solid gainsboro;
+  border-radius: 7px;
+  font-size:13px;
+  &:hover {
+  text-decoration:underline;
+  }
+`;
+const ProfileWrap = styled.div`
+  width: 100%;
   height: 100%;
   display: flex;
   flex-direction: row;
   align-items: center;
-
   justify-content: space-evenly;
-`
-const Post=styled.div
-`text-align: justify;
- font-size:20px;
-
-`
-const BoxList=styled.div
-`display:flex;
-`
-const CardBox=styled.div`
-background-color: blue;
-    width:230px;
-    height: 200px;
-    border-radius: 10px;
-    margin-left: 280px;
-    text-align: center;
-    line-height: 200px;
-    color:white;`
+`;
+const BoxList = styled.div`
+  display: flex;
+  margin-left:240px;
+`;
+const CardBox = styled.img`
+  width: 250px;
+  height: 250px;
+  border-radius: 10px;
+  background-color: tomato;
+  cursor: pointer;
+  margin: 30px 10px 30px 0px ;
+  padding:2px;
+`;

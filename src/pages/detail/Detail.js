@@ -1,6 +1,6 @@
-import React from "react";
-import CafeInfo from "../../components/Detail/CafeInfo/index";
-import CafeReview from "../../components/Detail/CafeReview/index";
+import CafeInfo from "../../components/detail/CafeInfo/index";
+import CafeReview from "../../components/detail/CafeReview/index";
+
 const Detail = () => {
     return (
         <div>
