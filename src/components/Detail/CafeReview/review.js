@@ -1,22 +1,22 @@
 import React from "react";
 import { ReviewWrap, ReviewHeader, ReviewContent } from "./style"
+import { useDispatch } from "react-redux";
+import { deleteReview } from "../../../redux/modules/reviewSlice"
+const Review = ({ review_id, user_nick, post_date, content }) => {
 
-const Review = ({ id, date, content }) => {
-    const userData = {
-        id: "Rio",
-        date: "2022-07-14",
-        content: "카페가 깔끔하고 커피맛이 좋았습니다. 다음에 또 방문하겠습니다!!"
-    }
+    const dispatch = useDispatch();
 
     const DeleteReview = () => {
         alert("리뷰를 삭제하시겠습니까?");
+        console.log(review_id, "호출");
+        dispatch(deleteReview(review_id));
     }
 
     return (
         <ReviewWrap>
             <ReviewHeader>
-                <span>{id}</span>
-                <span>{date}</span>
+                <span>{user_nick}</span>
+                <span>{post_date}</span>
                 <button onClick={DeleteReview}>X</button>
             </ReviewHeader>
             <ReviewContent>{content}</ReviewContent>
