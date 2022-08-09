@@ -1,5 +1,5 @@
 import { MainWrapper } from "./style";
-import PostPagination from "../../components/Main/PostsPagination";
+import PostPagination from "../../components/main/PostsPagination";
 import { CustomButton } from "../../components/CustomButton";
 import Modal from "../../components/modal";
 import { useState } from "react";
