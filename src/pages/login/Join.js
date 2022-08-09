@@ -7,8 +7,8 @@ import {
   StInput,
   StButton,
   StDiv,
-  StSelect,
   StCen,
+  StH1,
 } from './styleCompo';
 import Swal from 'sweetalert2';
 import withReactContent from 'sweetalert2-react-content';
@@ -43,7 +43,7 @@ const Join = () => {
   ];
 
   // State Update for joining
-  const [id, setId] = useState('');
+  const [user_id, setId] = useState('');
   const [pw, setPw] = useState('');
   const [rePw, setRePw] = useState('');
   const [nick, setNick] = useState('');
@@ -57,7 +57,7 @@ const Join = () => {
 
   // initial
   const initialState = {
-    id: '',
+    user_id: '',
     pw: '',
     nick: '',
     gender: 'female',
@@ -151,7 +151,7 @@ const Join = () => {
     setMonthSelected(tmp.monthSelected?.value);
     setDaySelected(tmp.daySelected?.value);
     setUser ({
-    id,
+    user_id,
     pw,
     nick,
     gender,
@@ -200,15 +200,16 @@ const Join = () => {
   // Gender set, use checked to set default
   const onChangeGen = (e) => {
     // console.log(e.target.value);
-    // console.log(e.target.id);
-    e.target.id === 'F' ? setGender('female') : setGender('male');
+    // console.log(e.target.user_id);
+    e.target.user_id === 'F' ? setGender('female') : setGender('male');
     userFunc(e);
   };
 
   // Id check and set immediately
   const onChangeId = (e) => {
-    e.target.value = e.target.value.replace(/[^0-9a-zA-Z]/g, ''); // only eng (others are restricted)
-    setId(e.target.value.trim());
+    let tmp = e.target.value;
+    tmp = tmp.replace(/[^0-9a-zA-Z]/g, ''); // only eng (others are restricted)
+    setId(tmp);
     // console.log(e.target.value);
     userFunc(e);
   };
@@ -339,7 +340,7 @@ const Join = () => {
         width='100%'
       />
       <StWrapInner join>
-        <h1 style={{ margin: '30px' }}>CAFE JOA</h1>
+      <StH1 join onClick={()=>navigate('/')}>CAFE JOA</StH1>
         <StForm onSubmit={onSubmitHandler}>
           {/* <span className='icon is-left'>
 <i className='fa fa-user' style={{ marginRight: '10px' }} />
@@ -349,11 +350,12 @@ const Join = () => {
             <span className='material-icons'>account_box</span>
             <StInput
               joinCheck
-              name='id'
+              id='user_id'
+              name='user_id'
               disabled={!isChk}
               type='text'
               placeholder='ID'
-              value={id}
+              value={user_id}
               onChange={onChangeId}
               onKeyDown={onKeyId}
               maxLength='15'
@@ -363,7 +365,7 @@ const Join = () => {
               joinCheck
               id='idChk'
               isChk={isChk}
-              value={id}
+              value={user_id}
               type='button'
               onClick={is_id}
             >
@@ -431,14 +433,14 @@ const Join = () => {
           <StCen>
             <span className='material-icons'>calendar_month</span>
             <StDiv bday>BIRTHDAY</StDiv>
-            <select birth='true' name='monthSelected' onChange={onTest}>
+            <select id='month' birth='true' name='monthSelected' onChange={onTest}>
               {month.map((arrayItem, index) => (
                 <option key={index} value={arrayItem}>
                   {arrayItem}
                 </option>
               ))}
             </select>
-            <select birth='true' name='daySelected'>
+            <select id='day' birth='true' name='daySelected'>
               {day.map((arrayItem, idx) => (
                 <option key={idx} value={arrayItem}>
                   {arrayItem}
