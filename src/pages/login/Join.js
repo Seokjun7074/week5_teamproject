@@ -160,7 +160,7 @@ const Join = () => {
     console.log(user.pw);
     console.log(user.birth);
     console.log(user2.pw);
-    
+     
     // console.log(e.target.id.value);
     // console.log(e.target.password.value);
     // console.log(e.target.monthSelected.value);
