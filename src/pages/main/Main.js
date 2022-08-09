@@ -1,7 +1,7 @@
 import { useSelector } from "react-redux";
 
 import { MainWrapper } from "./style";
-import PostPagination from "../../components/main/PostsPagination";
+import PostPagination from "../../components/main/postsPagination";
 import { CustomButton } from "../../components/CustomButton";
 import Modal from "../../components/modal";
 import { useState } from "react";
@@ -14,11 +14,6 @@ const Main = () => {
     setModlaToggle(false);
   };
 
-  // Redux store에서 데이터 가져오기
-  const cafeList = useSelector((state) => {
-    return state.cafe.cafeList;
-  });
-  // console.log(cafeList);
   return (
     <MainWrapper>
       <Header />
