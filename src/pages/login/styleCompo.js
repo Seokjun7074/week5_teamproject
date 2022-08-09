@@ -1,6 +1,27 @@
 import styled from "styled-components";
 {/* <script src="//cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script> */}
 
+
+export const StH1 = styled.h1`
+&:hover {
+  background-color: #ca7df9;
+}
+// logo login
+${(props) =>
+  props.login &&
+  `
+  margin: 50px;
+`}
+// logo join
+${(props) =>
+  props.join &&
+  `
+  margin: 30px;
+
+`}
+
+`
+
 export const StWrap = styled.div`
 overflow: hidden; 
 display: flex;
@@ -38,6 +59,7 @@ ${(props) =>
 `;
 
 export const StCen = styled.div`
+// make center
 display:inline-flex;
 justifyContent:center;
 align-items:center;
@@ -153,6 +175,7 @@ export const StDiv = styled.div`
   padding:10px 3px 10px 3px;
 `}
 
+// back div in join.js
   ${(props) =>
     props.back &&
     `
@@ -162,7 +185,7 @@ export const StDiv = styled.div`
   text-decoration-style: solid 
         }
         `}
-  
+  // join div in login.js
   ${(props) =>
     props.join &&
     `
@@ -172,6 +195,7 @@ export const StDiv = styled.div`
     background-color: rgba(255, 255, 255, 0.6);
         }
         `}
+   // warn div     
   ${(props) =>
     props.warn &&
     `

@@ -4,7 +4,6 @@ import Join from "./pages/login/Join";
 import Login from "./pages/login/Login";
 import Main from "./pages/main/Main";
 import MyPage from "./components/myPage/MyPage";
-
 import Detail from "./pages/detail/Detail";
 
 const Router = () => {
