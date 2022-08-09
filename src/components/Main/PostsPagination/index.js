@@ -5,7 +5,7 @@ import {
   NavigatorButton,
 } from "./style";
 import { dummyData } from "./dummy";
-import PostCard from "../PostCard";
+import PostCard from "../postCard";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
@@ -22,8 +22,8 @@ const PostPagination = () => {
       <PaginationContainer>
         {post.slice(startIdx, startIdx + limit).map((data) => {
           return (
-            <Link to={"detail"}>
-              <PostCard key={data.id}>{data.id}</PostCard>
+            <Link key={data.id} to={"detail"}>
+              <PostCard>{data.id}</PostCard>
             </Link>
           );
         })}
