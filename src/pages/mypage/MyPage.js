@@ -14,7 +14,7 @@ export default function MyPage() {
         <div>
             <Head />
             <Profile tmpData={tmpData}/>
-            <Posting/>
+            <Posting />
         </div>);
 }
 

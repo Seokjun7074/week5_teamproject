@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   tmp: {
-        nick :'sparta',
+        nick :'',
         profile_url: null,
    }
   

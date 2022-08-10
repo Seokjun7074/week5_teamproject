@@ -83,7 +83,7 @@ export default function Profile({tmpData}){
           <Photo src={tmpData.profile_url} />
           <Status>
             <h5 style={{ marginTop: "60px", marginLeft: "100px" }}>
-              {tmpData.nick}님
+              "{tmpData.nick}" 님
             </h5>
             <h5 style={{ marginLeft: "170px", marginTop: "20px" }}>
               반갑습니다.
