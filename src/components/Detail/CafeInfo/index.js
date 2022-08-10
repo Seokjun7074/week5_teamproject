@@ -2,12 +2,20 @@ import React from "react";
 import { CafeImage, MainWrap, CafeInfoWrap, EditButton } from "./style";
 import { useState } from "react";
 import { useParams } from "react-router-dom";
+
+import { useDispatch } from "react-redux";
+import {
+  updateCafes,
+  deleteCafes,
+  createTmp,
+} from "../../../redux/modules/cafeSlice";
 const CafeInfo = ({ cafeData }) => {
+  const dispatch = useDispatch();
+
   const cafe_id = useParams().cafe_id;
-  console.log(cafe_id);
+  // console.log(cafe_id);
 
-
-  console.log(cafeData);
+  // console.log(cafeData);
   const [isEdit, SetEdit] = useState(false);
   const [isHeart, SetHeart] = useState(false);
 
@@ -16,15 +24,26 @@ const CafeInfo = ({ cafeData }) => {
   const [address, SetAddress] = useState(cafeData.cafe_address);
   const [phone, SetPhone] = useState(cafeData.cafe_phone);
   const [time, SetTime] = useState(cafeData.cafe_time);
-  const [image, SetImage] = useState(
-    cafeData.cafe_img
-  );
+  const [image, SetImage] = useState(cafeData.cafe_img);
+
+  const newData = {
+    ...cafeData,
+    cafe_name: title,
+    cafe_address: address,
+    cafe_phone: phone,
+    cafe_time: time,
+    cafe_img: image,
+  };
 
   const [heart, SetHeartCount] = useState(1234);
 
   const onClickEditBtn = (e) => {
     if (isEdit) alert("수정하시겠습니까?");
     SetEdit(!isEdit);
+    //업데이트할 카페 정보
+    dispatch(deleteCafes(cafe_id));
+    dispatch(updateCafes(newData));
+    dispatch(createTmp(cafe_id));
     e.target.innerText = isEdit ? "수정" : "저장";
   };
   return (
