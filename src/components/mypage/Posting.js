@@ -1,27 +1,37 @@
 import React from "react";
 import {BoxList,CardBox} from "./style";
-import { Link } from "react-router-dom";
 import { createTmp } from "../../redux/modules/cafeSlice";
 import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 
 
 
 export default function Posting(){
+  const user=useSelector((state)=>state);
+  console.log(user);
+  const cafeList = useSelector((state) => {
+    return state.cafe.cafeList;
+  });
   const dispatch = useDispatch();
   const pic=useSelector((state)=>state.cafe.cafeList)
-  
-  console.log(pic.id)
+  const navigate = useNavigate();
+  console.log(pic.state)
 
     return(
         <div>
-  
-        
-         <div style={{textAlign: "justify",fontSize: '20px',textIndent:'240px',marginTop:"40px"}}>my posting</div>
-      <BoxList>
-      <Link to={`/detail`}>
-              <CardBox></CardBox>
-        </Link>
-      </BoxList>
+        {cafeList.map((data) => {
+          return (
+            <BoxList
+              key={data.cafe_id}
+              onClick={() => {
+                dispatch(createTmp(data.cafe_id));
+                navigate(`/detail/${data.cafe_id}`);
+              }}
+            >
+              <CardBox>{data.cafe_id}</CardBox>
+              </BoxList>
+          );
+        })}
 
         </div>)
 }

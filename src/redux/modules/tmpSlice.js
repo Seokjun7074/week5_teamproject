@@ -1,17 +1,17 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  tmp: {
-        nick :'',
-        profile_url: null,
-   }
-  
-};
+  tmp: [
+   { user_id :'hello',
+    nick:'sparta',
+  }
+  ]
+}
 
 const tmpSlice = createSlice({
   name: "tmp",
   initialState,
-  reducers: {
+  reducer: {
     updateTmp: (state, action) =>{
 
     state.tmp = action.payload

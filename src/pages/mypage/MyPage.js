@@ -2,8 +2,8 @@ import React from "react";
 import Head from "../../components/myPage/Head";
 import Posting from "../../components/myPage/Posting";
 import Profile from "../../components/myPage/Profile";
+import PostPagination from "../../components/main/postsPagination";
 import { useSelector } from "react-redux";
-import { useDispatch } from "react-redux";
 
 
 export default function MyPage() {
@@ -14,7 +14,8 @@ export default function MyPage() {
         <div>
             <Head />
             <Profile tmpData={tmpData}/>
-            <Posting />
+            {/* <Posting /> */}
+            <PostPagination/>
         </div>);
 }
 

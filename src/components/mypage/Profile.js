@@ -1,11 +1,14 @@
 import React from "react";
 import { ProfileWrap,Photo,Status,Layer,Button } from "./style";
+import { useSelector } from "react-redux";
 import {useState } from "react";
 import Modal from "../modal";
 import { useDispatch } from "react-redux";
 import { updateTmp } from "../../redux/modules/tmpSlice";
 
 export default function Profile({tmpData}){
+  const user=useSelector((state)=>state.tmp.tmp);
+  console.log(user);
   const Dispatch=useDispatch();
   const [modalToggels, setModlaToggles] = useState(false);
   const closeModals = () => {setModlaToggles(false);};
