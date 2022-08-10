@@ -4,9 +4,12 @@ import { useState } from "react";
 import { useParams } from "react-router-dom";
 
 import { useDispatch } from "react-redux";
-import { updateCafes, deleteCafes, createTmp } from "../../../redux/modules/cafeSlice"
+import {
+  updateCafes,
+  deleteCafes,
+  createTmp,
+} from "../../../redux/modules/cafeSlice";
 const CafeInfo = ({ cafeData }) => {
-
   const dispatch = useDispatch();
 
   const cafe_id = useParams().cafe_id;
@@ -21,12 +24,16 @@ const CafeInfo = ({ cafeData }) => {
   const [address, SetAddress] = useState(cafeData.cafe_address);
   const [phone, SetPhone] = useState(cafeData.cafe_phone);
   const [time, SetTime] = useState(cafeData.cafe_time);
-  const [image, SetImage] = useState(
-    cafeData.cafe_img
-  );
+  const [image, SetImage] = useState(cafeData.cafe_img);
 
-  const newData = { ...cafeData, cafe_name: title, cafe_address: address, cafe_phone: phone, cafe_time: time, cafe_img: image };
-
+  const newData = {
+    ...cafeData,
+    cafe_name: title,
+    cafe_address: address,
+    cafe_phone: phone,
+    cafe_time: time,
+    cafe_img: image,
+  };
 
   const [heart, SetHeartCount] = useState(1234);
 

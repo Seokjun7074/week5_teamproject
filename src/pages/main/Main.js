@@ -1,9 +1,7 @@
 import { useSelector } from "react-redux";
 import { MainWrapper } from "./style";
 
-
 import PostPagination from "../../components/main/postsPagination";
-
 
 import { CustomButton } from "../../components/CustomButton";
 import Modal from "../../components/modal";
@@ -20,7 +18,7 @@ const Main = () => {
   return (
     <MainWrapper>
       <Header />
-      <PostPagination />
+      <PostPagination filter={false} />
       <Modal visible={modalToggel} closeModal={closeModal}>
         <CafeForm visible={modalToggel} closeModal={closeModal} />
       </Modal>

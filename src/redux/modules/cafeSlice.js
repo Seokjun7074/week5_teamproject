@@ -32,5 +32,6 @@ const cafeSlice = createSlice({
   },
 });
 
-export const { createCafes, deleteCafes, updateCafes, createTmp } = cafeSlice.actions;
+export const { createCafes, deleteCafes, updateCafes, createTmp } =
+  cafeSlice.actions;
 export default cafeSlice.reducer;
