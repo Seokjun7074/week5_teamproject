@@ -3,7 +3,10 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Join from "./pages/login/Join";
 import Login from "./pages/login/Login";
 import Main from "./pages/main/Main";
+
 import MyPage from "./pages/mypage/MyPage";
+
+
 
 import Detail from "./pages/detail/Detail";
 
@@ -15,7 +18,7 @@ const Router = () => {
         <Route exact path="/login" element={<Login />} />
         <Route exact path="/join" element={<Join />} />
         <Route exact path="/mypage" element={<MyPage />} />
-        <Route exact path="/detail" element={<Detail />} />
+        <Route exact path="/detail/:cafe_id" element={<Detail />} />
       </Routes>
     </BrowserRouter>
   );
