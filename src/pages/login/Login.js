@@ -12,16 +12,22 @@ import {
 import { Link, useNavigate } from 'react-router-dom';
 import withReactContent from 'sweetalert2-react-content';
 import Swal from 'sweetalert2';
-
+import { useDispatch } from 'react-redux';
+import { userLogin } from "../../redux/modules/userSlice";
 const MySwal = withReactContent(Swal);
 const Login = () => {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
   const [user_id, setId] = useState('');
   const [pw, setPw] = useState('');
 
   // dummy data
   const tmpPw = 'a12!';
   const tmpId = 'a';
+  const chkUser = {
+    pw: tmpPw,
+    id: tmpId
+  }  
 
   const onChangeId = (e) => {
     let tmp = e.target.value;
@@ -72,6 +78,7 @@ const Login = () => {
         title: '로그인 성공!',
         icon: 'success',
       });
+      dispatch(userLogin(chkUser));
       navigate('/mypage')
     }
     // console.log(e.target?.user_id.value);

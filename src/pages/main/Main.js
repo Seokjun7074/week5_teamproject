@@ -1,7 +1,5 @@
 import { useSelector } from "react-redux";
-
 import { MainWrapper } from "./style";
-
 import PostPagination from "../../components/main/postsPagination";
 
 
