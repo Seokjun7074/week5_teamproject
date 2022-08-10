@@ -2,21 +2,24 @@ import React from "react";
 import { CafeImage, MainWrap, CafeInfoWrap, EditButton } from "./style";
 import { useState } from "react";
 import { useParams } from "react-router-dom";
-const CafeInfo = (props) => {
+const CafeInfo = ({ cafeData }) => {
   const cafe_id = useParams().cafe_id;
   console.log(cafe_id);
 
+
+  console.log(cafeData);
   const [isEdit, SetEdit] = useState(false);
   const [isHeart, SetHeart] = useState(false);
 
   // <<<<<<< HEAD
-  const [title, SetTitle] = useState("숭실마루");
-  const [address, SetAddress] = useState("서울특별시 동작구 XXX");
-  const [phone, SetPhone] = useState("02-XXX-XXXX");
-  const [time, SetTime] = useState("07시~20시");
+  const [title, SetTitle] = useState(cafeData.cafe_name);
+  const [address, SetAddress] = useState(cafeData.cafe_address);
+  const [phone, SetPhone] = useState(cafeData.cafe_phone);
+  const [time, SetTime] = useState(cafeData.cafe_time);
   const [image, SetImage] = useState(
-    "https://i.pinimg.com/564x/de/cb/ff/decbff83d65b9bfbbbd3a3ad68420414.jpg"
+    cafeData.cafe_img
   );
+
   const [heart, SetHeartCount] = useState(1234);
 
   const onClickEditBtn = (e) => {
