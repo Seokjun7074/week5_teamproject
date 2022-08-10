@@ -4,7 +4,7 @@ import {
   PaginationNavigator,
   NavigatorButton,
 } from "./style";
-// import { dummyData } from "./dummy";
+import { dummyData } from "./dummy";
 import PostCard from "../postCard";
 
 import { useState } from "react";
@@ -12,14 +12,14 @@ import { Link, useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { createTmp } from "../../../redux/modules/cafeSlice";
 
-const PostPagination = () => {
-  
-  const user=useSelector((state)=>state.user.userList);
+const PostPagination = ({ filter }) => {
+  const user = useSelector((state) => state.user.userList);
   console.log(user);
   // Redux store에서 데이터 가져오기
   const cafeList = useSelector((state) => {
     return state.cafe.cafeList;
   });
+  // const cafeList = dummyData;
   const dispatch = useDispatch();
   const [curPage, setCurPage] = useState(1); // 현재 페이지
   const limit = 8; // 페이지에서 보여줄 게시물 수
@@ -30,19 +30,25 @@ const PostPagination = () => {
   return (
     <PostPaginationWrapper>
       <PaginationContainer>
-        {cafeList.slice(startIdx, startIdx + limit).map((data) => {
-          return (
-            <div
-              key={data.cafe_id}
-              onClick={() => {
-                dispatch(createTmp(data.cafe_id));
-                navigate(`/detail/${data.cafe_id}`);
-              }}
-            >
-              <PostCard>{data.cafe_id}</PostCard>
-            </div>
-          );
-        })}
+        {cafeList
+          .filter((e) => {
+            // 아래에 리턴 부분 (e.cafe_id.length > 10) 상황에 맞게 쓰시면됩니다.
+            return filter ? e.cafe_id.length > 10 : e;
+          })
+          .slice(startIdx, startIdx + limit)
+          .map((data) => {
+            return (
+              <div
+                key={data.cafe_id}
+                onClick={() => {
+                  dispatch(createTmp(data.cafe_id));
+                  navigate(`/detail/${data.cafe_id}`);
+                }}
+              >
+                <PostCard>{data.cafe_id}</PostCard>
+              </div>
+            );
+          })}
       </PaginationContainer>
       <PaginationNavigator>
         {Array(totalPage)
