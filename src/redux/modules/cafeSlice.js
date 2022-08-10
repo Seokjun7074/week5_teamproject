@@ -1,9 +1,9 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, current } from "@reduxjs/toolkit";
 import { toBeEmpty } from "@testing-library/jest-dom/dist/matchers";
 
 const initialState = {
   cafeList: [],
-  tmp: [],
+  tmp: {},
 };
 
 const cafeSlice = createSlice({
@@ -20,8 +20,12 @@ const cafeSlice = createSlice({
         cafeList: state.cafeList.filter((e) => e.id !== idx),
       };
     },
+    createTmp: (state, action) => {
+      state.tmp = state.cafeList.find((e) => e.cafe_id === action.payload);
+      console.log(current(state.tmp));
+    },
   },
 });
 
-export const { createCafes, deleteCafes } = cafeSlice.actions;
+export const { createCafes, deleteCafes, createTmp } = cafeSlice.actions;
 export default cafeSlice.reducer;
