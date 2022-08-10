@@ -6,8 +6,6 @@ import Main from "./pages/main/Main";
 
 import MyPage from "./pages/myPage/MyPage";
 
-
-
 import Detail from "./pages/detail/Detail";
 
 const Router = () => {

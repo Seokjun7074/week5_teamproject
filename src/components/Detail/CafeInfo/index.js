@@ -9,6 +9,7 @@ import {
   deleteCafes,
   createTmp,
 } from "../../../redux/modules/cafeSlice";
+import { TextInput } from "../../main/cafeForm/style";
 const CafeInfo = ({ cafeData }) => {
   const dispatch = useDispatch();
 
@@ -25,7 +26,7 @@ const CafeInfo = ({ cafeData }) => {
   const [phone, SetPhone] = useState(cafeData.cafe_phone);
   const [time, SetTime] = useState(cafeData.cafe_time);
   const [image, SetImage] = useState(cafeData.cafe_img);
-
+  console.log(image);
   const newData = {
     ...cafeData,
     cafe_name: title,
@@ -48,7 +49,8 @@ const CafeInfo = ({ cafeData }) => {
   };
   return (
     <MainWrap>
-      <CafeImage src={image} />
+      {/* <CafeImage src={`${image}`} /> */}
+      <CafeImage src={cafeData.cafe_img} />
       <CafeInfoWrap>
         <EditButton onClick={onClickEditBtn}>수정</EditButton>
         <div>
@@ -56,7 +58,7 @@ const CafeInfo = ({ cafeData }) => {
           {!isEdit ? (
             <span>{title}</span>
           ) : (
-            <input
+            <TextInput
               type={"text"}
               placeholder={title}
               onChange={(e) => SetTitle(e.target.value)}
@@ -68,7 +70,7 @@ const CafeInfo = ({ cafeData }) => {
           {!isEdit ? (
             <span>{address}</span>
           ) : (
-            <input
+            <TextInput
               type={"text"}
               placeholder={address}
               onChange={(e) => SetAddress(e.target.value)}
@@ -80,7 +82,7 @@ const CafeInfo = ({ cafeData }) => {
           {!isEdit ? (
             <span>{phone}</span>
           ) : (
-            <input
+            <TextInput
               type={"text"}
               placeholder={phone}
               onChange={(e) => SetPhone(e.target.value)}
@@ -92,7 +94,7 @@ const CafeInfo = ({ cafeData }) => {
           {!isEdit ? (
             <span>{time}</span>
           ) : (
-            <input
+            <TextInput
               type={"text"}
               placeholder={time}
               onChange={(e) => SetTime(e.target.value)}
