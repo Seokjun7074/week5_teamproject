@@ -15,5 +15,17 @@
   ],
   "profile": {
     "name": "typicode"
+  },
+  "userList":
+    [
+    {
+      "user_id": "a",
+      "pw": "a12!",
+      "nick": "a12!",
+      "gender": "male",
+      "birth" :["May",5],
+      "profile_url":""
+    }
+    ]
+  
   }
-}

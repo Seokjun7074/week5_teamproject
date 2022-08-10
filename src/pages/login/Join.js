@@ -187,9 +187,6 @@ const Join = () => {
 
   // Gender set, use checked to set default
   const onChangeGen = (e) => {
-    // console.log(e.target.value);
-    // e.target.id === "F" ? setGender("female") : setGender("male");
-    // e.target.id === "M" ? setGender("male") : setGender("female");
     setGender(e.target.value);
     userFunc(e);
   };

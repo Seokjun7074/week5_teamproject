@@ -12,7 +12,7 @@ import {
 import { Link, useNavigate } from 'react-router-dom';
 import withReactContent from 'sweetalert2-react-content';
 import Swal from 'sweetalert2';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { userLogin } from "../../redux/modules/userSlice";
 const MySwal = withReactContent(Swal);
 const Login = () => {
@@ -20,29 +20,28 @@ const Login = () => {
   const dispatch = useDispatch();
   const [user_id, setId] = useState('');
   const [pw, setPw] = useState('');
-
+  
   // dummy data
   const tmpPw = 'a12!';
   const tmpId = 'a';
-  const chkUser = {
-    pw: tmpPw,
-    id: tmpId
-  }  
-
+ 
+  // console.log(userChk);
+  // console.log(pwChk);
+ 
   const onChangeId = (e) => {
     let tmp = e.target.value;
     tmp = tmp.replace(/[^0-9a-zA-Z]/g, ''); // 
     // const { name, value } = e.target;
     // setLogin({ [name]: value });
     setId(tmp);
-    console.log(user_id);
+    // console.log(user_id);
   };
 
   const onChangePw = (e) => {
     let tmp = e.target.value;
     tmp = tmp.replace(' ', '');
     setPw(tmp);
-    console.log(pw);
+    // console.log(pw);
   };
 
 
@@ -52,6 +51,10 @@ const Login = () => {
       e.preventDefault();
     }
   };
+ 
+  // chk id, pw
+  const userChk = useSelector(db=>db.user.userList.find((ele)=>ele.user_id===user_id));
+  const pwChk = userChk?.pw===pw;
 
   const OnSubmitHandler = (e) => {
     e.preventDefault();
@@ -67,19 +70,18 @@ const Login = () => {
         icon: 'error',
       });
       document.getElementById('pw').focus();
-    }else if(pw!==tmpPw||user_id!==tmpId){
+    }else if(!pwChk){
       MySwal.fire({
         title: '아이디, 비밀번호가 불일치 합니다.',
         icon: 'error',
       });
       document.getElementById('user_id').focus();
-    }else if(pw===tmpPw && user_id===tmpId){
+    }else if(pwChk){
       MySwal.fire({
         title: '로그인 성공!',
         icon: 'success',
       });
-      dispatch(userLogin(chkUser));
-      navigate('/mypage')
+      navigate('/mypage/'+user_id)
     }
     // console.log(e.target?.user_id.value);
   };

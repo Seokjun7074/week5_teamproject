@@ -3,7 +3,19 @@ import { createSlice, current} from "@reduxjs/toolkit";
 //  action은 FSA(Flux Standard Action) 
 // type: 액션의 성질, payload: 액션의 인자, error, meta : 부가적 내용
 const initialState = {
-  userList: [],
+  userList: [
+    {
+    user_id: "ha",
+    pw: "a12!",
+    nick: "a12!",
+    gender: "male",
+    birth :['May',5],
+    profile_url:''
+  }, 
+  {
+
+  }
+  ],
   tmpUser: {
     user_id : 'sprata',
     pw : '',
