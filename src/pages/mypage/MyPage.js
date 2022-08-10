@@ -1,7 +1,7 @@
 import React from "react";
-import Head from "../../components/mypage/Head";
-import Posting from "../../components/mypage/Posting";
-import Profile from "../../components/mypage/Profile";
+import Head from "../../components/myPage/Head";
+import Posting from "../../components/myPage/Posting";
+import Profile from "../../components/myPage/Profile";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 

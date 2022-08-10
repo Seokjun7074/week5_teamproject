@@ -1,15 +1,12 @@
 import { useSelector } from "react-redux";
-
 import { MainWrapper } from "./style";
-
-import PostPagination from "../../components/Main/PostsPagination";
-
+import PostPagination from "../../components/main/postsPagination";
 
 import { CustomButton } from "../../components/CustomButton";
 import Modal from "../../components/modal";
 import { useState } from "react";
 import Header from "../../components/header";
-import CafeForm from "../../components/Main/cafeForm";
+import CafeForm from "../../components/main/cafeForm";
 const Main = () => {
   // 모달창 토글부분
   const [modalToggel, setModlaToggle] = useState(false);
