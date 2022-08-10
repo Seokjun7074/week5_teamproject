@@ -33,7 +33,7 @@ const PostPagination = () => {
               key={data.cafe_id}
               onClick={() => {
                 dispatch(createTmp(data.cafe_id));
-                // navigate(`/detail/${data.cafe_id}`);
+                navigate(`/detail/${data.cafe_id}`);
               }}
             >
               <PostCard>{data.cafe_id}</PostCard>
