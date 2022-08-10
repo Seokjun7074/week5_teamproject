@@ -3,7 +3,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Join from "./pages/login/Join";
 import Login from "./pages/login/Login";
 import Main from "./pages/main/Main";
-import MyPage from "./components/myPage/MyPage";
+import MyPage from "./pages/mypage/MyPage";
 
 import Detail from "./pages/detail/Detail";
 
