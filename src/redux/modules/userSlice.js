@@ -24,7 +24,8 @@ const userSlice = createSlice({
         pw: action.payload.pw,
         nick: action.payload.nick,
         gender: action.payload.gender,
-        month:[action.payload.monthSelected, action.payload.daySelected ]
+        month:[action.payload.monthSelected, action.payload.daySelected],
+        profile_url:''
       }
       state.userList.push(state.tmpUser);
       console.log(current(state.userList));
