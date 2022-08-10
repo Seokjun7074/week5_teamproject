@@ -1,5 +1,5 @@
 import React from "react";
-import Head from "../../components/myPage/Head";
+import Header from "../../components/myPage/Head";
 import Profile from "../../components/myPage/Profile";
 import PostPagination from "../../components/main/postsPagination";
 import { useSelector } from "react-redux";
@@ -9,7 +9,7 @@ export default function MyPage() {
   console.log(tmpData);
   return (
     <div>
-      <Head />
+      <Header />
 
       <Profile tmpData={tmpData} />
       <PostPagination filter={true} />

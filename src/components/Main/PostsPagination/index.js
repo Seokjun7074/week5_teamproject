@@ -26,6 +26,8 @@ const PostPagination = ({ filter }) => {
   const startIdx = (curPage - 1) * limit;
   const totalPage = Math.ceil(cafeList.length / limit);
 
+  const userInfo = useSelector(state=>state.user.tmpUser);
+   
   const navigate = useNavigate();
   return (
     <PostPaginationWrapper>
@@ -33,7 +35,7 @@ const PostPagination = ({ filter }) => {
         {cafeList
           .filter((e) => {
             // 아래에 리턴 부분 (e.cafe_id.length > 10) 상황에 맞게 쓰시면됩니다.
-            return filter ? e.cafe_id.length > 10 : e;
+            return filter ? e.writer_id === userInfo.user_id : e;
           })
           .slice(startIdx, startIdx + limit)
           .map((data) => {
