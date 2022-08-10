@@ -23,7 +23,7 @@ const CafeForm = ({ visible, closeModal }) => {
     cafe_address: "",
     cafe_phone: "",
     cafe_time: "",
-    cafe_img: "",
+    cafe_img: "/img/default_img.jpeg",
   };
   const [cafeInfo, setCafeInfo] = useState({ ...initState });
   //   console.log(cafeInfo);
@@ -55,7 +55,6 @@ const CafeForm = ({ visible, closeModal }) => {
 
   // 이미지 저장 처리
   const saveImage = (e) => {
-    // setFileImage(URL.createObjectURL(e.target.files[0]));
     setCafeInfo({
       ...cafeInfo,
       cafe_img: URL.createObjectURL(e.target.files[0]),
@@ -63,7 +62,7 @@ const CafeForm = ({ visible, closeModal }) => {
   };
   // 이미지 할당 해제 + cafeInfo 초기화
   const deleteContent = () => {
-    URL.revokeObjectURL(cafe_img);
+    // URL.revokeObjectURL(cafe_img);
     setCafeInfo({
       ...cafeInfo,
       ...initState,

@@ -4,9 +4,7 @@ import Join from "./pages/login/Join";
 import Login from "./pages/login/Login";
 import Main from "./pages/main/Main";
 
-import MyPage from "./pages/mypage/MyPage";
-
-
+import MyPage from "./pages/myPage/MyPage";
 
 import Detail from "./pages/detail/Detail";
 

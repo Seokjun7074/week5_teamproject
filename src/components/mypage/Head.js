@@ -9,7 +9,7 @@ export default function Head() {
     <Mainwrap>
       <Header/>
       <BackGround src="https://i.pinimg.com/564x/de/cb/ff/decbff83d65b9bfbbbd3a3ad68420414.jpg"></BackGround>
-      <div style={{color: "white",position: "absolute", lineHeight: "330px",fontSize: "35px", textIndent: "240px"}}>my cafe</div> 
+      {/* <div style={{color: "white",position: "absolute", lineHeight: "330px",fontSize: "35px", textIndent: "240px"}}>my cafe</div>  */}
     </Mainwrap>
   );
 }

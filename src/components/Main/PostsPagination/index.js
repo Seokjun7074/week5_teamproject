@@ -3,10 +3,10 @@ import {
   PaginationContainer,
   PaginationNavigator,
   NavigatorButton,
+  PostCardImg,
 } from "./style";
 import { dummyData } from "./dummy";
 import PostCard from "../postCard";
-
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
@@ -14,7 +14,7 @@ import { createTmp } from "../../../redux/modules/cafeSlice";
 
 const PostPagination = ({ filter }) => {
   const user = useSelector((state) => state.user.userList);
-  console.log(user);
+  // console.log(user);
   // Redux store에서 데이터 가져오기
   const cafeList = useSelector((state) => {
     return state.cafe.cafeList;
@@ -26,6 +26,8 @@ const PostPagination = ({ filter }) => {
   const startIdx = (curPage - 1) * limit;
   const totalPage = Math.ceil(cafeList.length / limit);
 
+  const userInfo = useSelector(state=>state.user.tmpUser);
+   
   const navigate = useNavigate();
   return (
     <PostPaginationWrapper>
@@ -33,7 +35,7 @@ const PostPagination = ({ filter }) => {
         {cafeList
           .filter((e) => {
             // 아래에 리턴 부분 (e.cafe_id.length > 10) 상황에 맞게 쓰시면됩니다.
-            return filter ? e.cafe_id.length > 10 : e;
+            return filter ? e.writer_id === userInfo.user_id : e;
           })
           .slice(startIdx, startIdx + limit)
           .map((data) => {
@@ -45,7 +47,13 @@ const PostPagination = ({ filter }) => {
                   navigate(`/detail/${data.cafe_id}`);
                 }}
               >
-                <PostCard>{data.cafe_id}</PostCard>
+                <PostCard>
+                  <PostCardImg
+                    src={data.cafe_img}
+                    // src="img/default_img.jpeg"
+                    onerror="img/default_img.jpeg"
+                  />
+                </PostCard>
               </div>
             );
           })}
