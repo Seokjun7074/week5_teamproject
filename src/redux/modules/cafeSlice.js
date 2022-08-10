@@ -17,9 +17,14 @@ const cafeSlice = createSlice({
       const idx = action.payload;
       return {
         ...state,
-        cafeList: state.cafeList.filter((e) => e.id !== idx),
+        cafeList: state.cafeList.filter((e) => e.cafe_id !== idx),
       };
     },
+
+    updateCafes: (state, action) => {
+      state.cafeList.push(action.payload);
+    },
+
     createTmp: (state, action) => {
       state.tmp = state.cafeList.find((e) => e.cafe_id === action.payload);
       console.log(current(state.tmp));
@@ -27,5 +32,5 @@ const cafeSlice = createSlice({
   },
 });
 
-export const { createCafes, deleteCafes, createTmp } = cafeSlice.actions;
+export const { createCafes, deleteCafes, updateCafes, createTmp } = cafeSlice.actions;
 export default cafeSlice.reducer;

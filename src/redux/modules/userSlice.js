@@ -4,7 +4,14 @@ import { createSlice, current} from "@reduxjs/toolkit";
 // type: 액션의 성질, payload: 액션의 인자, error, meta : 부가적 내용
 const initialState = {
   userList: [],
-  tmpUser: {},
+  tmpUser: {
+    user_id : 'sprata',
+    pw : '',
+    nick : 'sony',
+    gender : 'f',
+    birth : ['May', 3] ,
+    profile_url: '',
+  },
 };
 
 const userSlice = createSlice({
@@ -27,6 +34,7 @@ const userSlice = createSlice({
       state.tmpUser = action.payload;
       console.log(state.tmpUser);
     },
+    
   },
   // extraReducers:(builder) =>{
   //      builder

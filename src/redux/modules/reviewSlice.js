@@ -1,24 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-    reviewList: [
-        {
-            cafe_id: 0,
-            review_id: 0,
-            post_date: "2022-08-09",
-            user_nick: "dudgns5845",
-            user_id: "0",
-            content: "커피 맛이 좋고 매장 인테리어가 좋습니다. 강추!!",
-        },
-        {
-            cafe_id: 1,
-            review_id: 1,
-            post_date: "2022-08-07",
-            user_nick: "영등포꿀쟁이",
-            user_id: "1",
-            content: "콘센트가 많아 노트북 하기가 좋은 것 같습니다. 번창하세요~~😆",
-        },
-    ],
+    reviewList: [],
 };
 
 const reviewSlice = createSlice({
