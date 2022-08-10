@@ -11,7 +11,7 @@ const initialState = {
 const tmpSlice = createSlice({
   name: "tmp",
   initialState,
-  reducer: {
+  reducers: {
     updateTmp: (state, action) =>{
 
     state.tmp = action.payload

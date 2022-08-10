@@ -21,12 +21,14 @@ export default function Profile({tmpData}){
   const saveImage=(e)=>{
     setFileImage(URL.createObjectURL(e.target.files[0]));
   };
+
+  console.log("tempdata",tmpData);
   const [postImage,setPostImage]=useState(setFileImage);
   const onClickHandler=()=>{
    const img_url=fileImage;
    const new_nick=Nick;
    Dispatch(updateTmp({nick:new_nick,profile_url:img_url}));
-    // console.log(img_url,new_nick);
+    
     alert("수정되었습니다.")
     closeModals()
   }
@@ -39,7 +41,7 @@ export default function Profile({tmpData}){
             {fileImage && (
               <img
                 alt="sample"
-                src={fileImage}
+                src={tmpData.profile_url}
                 style={{
                   width: "200px",
                   height: "200px",
@@ -86,7 +88,7 @@ export default function Profile({tmpData}){
           <Photo src={tmpData.profile_url} />
           <Status>
             <h5 style={{ marginTop: "60px", marginLeft: "100px" }}>
-              "{tmpData.nick}" 님
+              {tmpData[0].nick}님
             </h5>
             <h5 style={{ marginLeft: "170px", marginTop: "20px" }}>
               반갑습니다.

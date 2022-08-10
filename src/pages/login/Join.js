@@ -283,8 +283,8 @@ const Join = () => {
 
   // state 비동기성으로 한 박자씩 늦게 console 작용하여, useEffect로 체크
   useEffect((e) => {
-    console.log(user);
-    console.log(user2);
+    // console.log(user);
+    // console.log(user2);
     // eslint-disable-next-line no-use-before-define
   }, [daySelected, gender, monthSelected, warn]);
   // http://daplus.net/javascript-%EC%84%A0%ED%83%9D%ED%95%9C-%EB%9D%BC%EB%94%94%EC%98%A4-%EB%B2%84%ED%8A%BC%EC%9D%98-%EA%B0%92%EC%9D%84-%EC%96%BB%EB%8A%94-%EB%B0%A9%EB%B2%95/
@@ -368,7 +368,8 @@ const Join = () => {
         gender,
         birth:[monthSelected, daySelected]
       });
-      dispatch(userJoin(user3));
+      dispatch(userJoin(user2));
+      setTimeout(()=>{ navigate('/login') }, 1000);
     }
     // e.preventDefault();
   };
