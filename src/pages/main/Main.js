@@ -1,8 +1,8 @@
 import { useSelector } from "react-redux";
-
 import { MainWrapper } from "./style";
 
-import PostPagination from "../../components/main/PostsPagination";
+
+import PostPagination from "../../components/main/postsPagination";
 
 
 import { CustomButton } from "../../components/CustomButton";
