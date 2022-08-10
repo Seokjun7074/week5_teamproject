@@ -18,7 +18,7 @@ const Main = () => {
   return (
     <MainWrapper>
       <Header />
-      <PostPagination filter={true} />
+      <PostPagination filter={false} />
       <Modal visible={modalToggel} closeModal={closeModal}>
         <CafeForm visible={modalToggel} closeModal={closeModal} />
       </Modal>

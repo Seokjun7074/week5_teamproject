@@ -13,11 +13,11 @@ import { useSelector, useDispatch } from "react-redux";
 import { createTmp } from "../../../redux/modules/cafeSlice";
 
 const PostPagination = ({ filter }) => {
-  // Redux store에서 데이터 가져오기
-  // const cafeList = useSelector((state) => {
-  //   return state.cafe.cafeList;
-  // });
-  const cafeList = dummyData;
+  //Redux store에서 데이터 가져오기
+  const cafeList = useSelector((state) => {
+    return state.cafe.cafeList;
+  });
+  // const cafeList = dummyData;
   const dispatch = useDispatch();
   const [curPage, setCurPage] = useState(1); // 현재 페이지
   const limit = 8; // 페이지에서 보여줄 게시물 수
@@ -30,8 +30,8 @@ const PostPagination = ({ filter }) => {
       <PaginationContainer>
         {cafeList
           .filter((e) => {
-            // 아래에 리턴 부분 (e.cafe_id > 10) 상황에 맞게 쓰시면됩니다.
-            return filter ? e.cafe_id > 10 : e;
+            // 아래에 리턴 부분 (e.cafe_id.length > 10) 상황에 맞게 쓰시면됩니다.
+            return filter ? e.cafe_id.length > 10 : e;
           })
           .slice(startIdx, startIdx + limit)
           .map((data) => {
