@@ -5,8 +5,8 @@ import {
   NavigatorButton,
 } from "./style";
 // import { dummyData } from "./dummy";
-import PostCard from "../postCard";
 
+import PostCard from "../PostCard";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
