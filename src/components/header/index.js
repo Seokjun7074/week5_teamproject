@@ -9,13 +9,11 @@ import {
 import { Link, useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 const Header = () => {
-
-  const userInfo = useSelector(state=>state.user.tmpUser);
+  const userInfo = useSelector((state) => state.user.tmpUser);
 
   //const userInfo = {};
 
-
-  console.log(userInfo);
+  // console.log(userInfo);
 
   const navigate = useNavigate();
 
@@ -32,7 +30,9 @@ const Header = () => {
           <div>로고</div>
         </Link>
         <NavRight>
-          { userInfo.user_id && <NavMypage onClick={goToMyPage}>마이페이지</NavMypage>}
+          {userInfo.user_id && (
+            <NavMypage onClick={goToMyPage}>마이페이지</NavMypage>
+          )}
           <NavLogin onClick={goToLogin}>로그인/회원가입</NavLogin>
         </NavRight>
       </Navigator>
