@@ -21,6 +21,16 @@ const Login = () => {
   const [user_id, setId] = useState('');
   const [pw, setPw] = useState('');
   
+  // srcripts
+  // "scripts": {
+  //   "start": "node server",
+  //   "start:dev": "cross-env NODE_PATH=src react-scripts start",
+  //   "build": "cross-env NODE_PATH=src react-scripts build",
+  //   "test": "react-scripts test --env=jsdom",
+  //   "eject": "react-scripts eject",
+  //   "heroku-postbuild": "cross-env NODE_PATH=src npm run build"
+  // },
+
   // dummy data
   const tmpPw = 'a12!';
   const tmpId = 'a';
@@ -52,7 +62,7 @@ const Login = () => {
     }
   };
  
-  // chk id, pw
+  // chk id, pw, inefficient
   const userChk = useSelector(db=>db.user.userList.find((ele)=>ele.user_id===user_id));
   const pwChk = userChk?.pw===pw;
 

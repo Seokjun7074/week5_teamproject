@@ -13,7 +13,7 @@ import {
 import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
 import { useNavigate } from "react-router-dom";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import { userJoin } from "../../redux/modules/userSlice";
 // import axios from "axios";
@@ -288,6 +288,8 @@ const Join = () => {
 
   // Conditional Rendering
   // 1. loginCheckBtn, if :id dosen't exists, btn >> disabled=true, color changed => later
+  
+  const userChk = useSelector(db=>db.user.userList.find((ele)=>ele.user_id===user_id));
   const is_id = (e) => {
     // let isChk = e.target.isChk;
     if (e.target.value === "") {
@@ -296,7 +298,8 @@ const Join = () => {
         icon: "error",
       });
     } else {
-      if (tmpId === e.target.value) {
+      setId(e.target.value)
+      if (userChk) {
         setIsChk(true);
         MySwal.fire({
           title: "The ID exists, please try another ID",
