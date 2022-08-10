@@ -7,15 +7,18 @@ import { useSelector } from "react-redux";
 
 
 export default function MyPage() {
-   
-    const tmpData=useSelector(state=>state.tmp.tmp);
+
+    const tmpData = useSelector(state => state.tmp.tmp);
     console.log(tmpData);
     return (
         <div>
             <Head />
+
             <Profile tmpData={tmpData}/>
             {/* <Posting /> */}
-            <PostPagination/>
+
+            <Profile tmpData={tmpData} />
+            <Posting />
         </div>);
 }
 

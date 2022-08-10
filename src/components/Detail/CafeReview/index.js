@@ -4,10 +4,15 @@ import { useRef, useState } from "react";
 import Review from "./review";
 import { useDispatch } from "react-redux";
 import { createReview } from "../../../redux/modules/reviewSlice";
+import { v4 as uuidv4 } from "uuid";
+import { useParams } from "react-router-dom";
 const CafeReview = ({ reviewList }) => {
 
     const dispatch = useDispatch();
+    const cafe_id = useParams().cafe_id;
 
+    const review_id = uuidv4(); // 랜덤 아이디 생성
+    const today = new Date().toISOString().slice(0, 10);
     //새로 작성할 리뷰
     const review = useRef("");
 
@@ -32,7 +37,8 @@ const CafeReview = ({ reviewList }) => {
         if (review === "") { alert("리뷰를 입력해주세요!!"); return; }
         else {
             alert("리뷰를 등록하시겠습니까?");
-            dispatch(createReview(newReview))
+
+            dispatch(createReview({ ...newReview, post_date: today, review_id: review_id, cafe_id: cafe_id }))
             review.current.value = "";
         }
 
@@ -46,8 +52,8 @@ const CafeReview = ({ reviewList }) => {
             </InputWrap>
             <ReviewList>
                 {
-                    reviewList.map((item) => {
-                        return <Review review_id={item.review_id} user_nick={item.user_nick} post_date={item.post_date} content={item.content} />
+                    reviewList.filter((item) => item.cafe_id === cafe_id).map((item) => {
+                        return <Review key={item.review_id} review_id={item.review_id} user_nick={item.user_nick} post_date={item.post_date} content={item.content} />
                     })
                 }
             </ReviewList>
