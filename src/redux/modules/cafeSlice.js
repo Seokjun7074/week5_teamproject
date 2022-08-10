@@ -17,7 +17,7 @@ const cafeSlice = createSlice({
       const idx = action.payload;
       return {
         ...state,
-        cafeList: state.cafeList.filter((e) => e.id !== idx),
+        cafeList: state.cafeList.filter((e) => e.cafe_id !== idx),
       };
     },
 
