@@ -5,9 +5,6 @@ import Header from "../header";
 
 
 export default function Head() {
-  
-  
-
   return (
     <Mainwrap>
       <Header/>
@@ -16,17 +13,3 @@ export default function Head() {
     </Mainwrap>
   );
 }
-
-   {/* {fileImage &&(<img alt="sample"src={fileImage} style={{width:"350px",height:"300px",marginTop:"10PX",marginLeft:"20px"}}></img>)}
-        <input style={{position:"absolute", right:"5%"}}type="file"accept="image/*"onChange={saveImage} />
-        <div style={{flexDirection: "column", justifyContent:"space-between"}}>
-        <h3 style={{marginTop:"10px"}}>comment</h3>
-        <button >업로드 하기</button>
-        <button style={{paddingLeft:"8PX",paddingRight:"8PX",paddingTop:"3px",border: "2px solid gray",borderRadius:"5px"}}onClick={()=>DeleteImage()}>삭제</button>
-        </div>
-        <div style={{flexDirection: "COLUMN"}}>
-        카페 명 :<input style={{marginTop:"20px",marginLeft:"10px",width:"100px",border:"3px solid gainsboro"}}onChange={onChangeComment} type={"text"}></input>
-        카페 주소 :<input style={{marginTop:"20px",marginLeft:"10px",width:"100px",border:"3px solid gainsboro"}}onChange={onChangeComment} type={"text"}></input>
-        전화 번호 :<input style={{marginTop:"20px",marginLeft:"10px",width:"100px",border:"3px solid gainsboro"}}onChange={onChangeComment} type={"text"}></input>
-        영업 시간 :<input style={{marginTop:"20px",marginLeft:"10px",width:"100px",border:"3px solid gainsboro"}}onChange={onChangeComment} type={"text"}></input>
-        </div> */}
