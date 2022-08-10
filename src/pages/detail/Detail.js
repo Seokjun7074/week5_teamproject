@@ -7,11 +7,12 @@ import { useSelector } from "react-redux";
 
 const Detail = () => {
 
+    const cafeData = useSelector(state => state.cafe.tmp);
     const reviewList = useSelector(state => state.review.reviewList);
 
     return (
         <div>
-            <CafeInfo />
+            <CafeInfo cafeData={cafeData} />
             <CafeReview reviewList={reviewList} />
         </div>);
 }

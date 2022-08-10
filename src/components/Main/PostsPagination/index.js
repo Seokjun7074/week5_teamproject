@@ -5,30 +5,39 @@ import {
   NavigatorButton,
 } from "./style";
 // import { dummyData } from "./dummy";
-import PostCard from "../postCard";
+import PostCard from "../PostCard";
 
 import { useState } from "react";
-import { Link } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { Link, useNavigate } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
+import { createTmp } from "../../../redux/modules/cafeSlice";
 
 const PostPagination = () => {
   // Redux store에서 데이터 가져오기
   const cafeList = useSelector((state) => {
     return state.cafe.cafeList;
   });
+  const dispatch = useDispatch();
   const [curPage, setCurPage] = useState(1); // 현재 페이지
   const limit = 8; // 페이지에서 보여줄 게시물 수
   const startIdx = (curPage - 1) * limit;
   const totalPage = Math.ceil(cafeList.length / limit);
 
+  const navigate = useNavigate();
   return (
     <PostPaginationWrapper>
       <PaginationContainer>
         {cafeList.slice(startIdx, startIdx + limit).map((data) => {
           return (
-            <Link key={data.cafe_id} to={`/detail/${data.cafe_id}`}>
+            <div
+              key={data.cafe_id}
+              onClick={() => {
+                dispatch(createTmp(data.cafe_id));
+                navigate(`/detail/${data.cafe_id}`);
+              }}
+            >
               <PostCard>{data.cafe_id}</PostCard>
-            </Link>
+            </div>
           );
         })}
       </PaginationContainer>
