@@ -13,7 +13,9 @@ import { useSelector, useDispatch } from "react-redux";
 import { createTmp } from "../../../redux/modules/cafeSlice";
 
 const PostPagination = ({ filter }) => {
-  //Redux store에서 데이터 가져오기
+  const user = useSelector((state) => state.user.userList);
+  console.log(user);
+  // Redux store에서 데이터 가져오기
   const cafeList = useSelector((state) => {
     return state.cafe.cafeList;
   });
