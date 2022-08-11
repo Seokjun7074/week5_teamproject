@@ -51,7 +51,7 @@ const CafeForm = ({ visible, closeModal }) => {
       cafe_id: new_cafe_id,
     };
     // console.log(newData);
-    // dispatch(createCafes(newDate));
+    // dispatch(__createCafes(newData));
     axios.post("http://localhost:3001/cafe", newData);
 
     closeModal();

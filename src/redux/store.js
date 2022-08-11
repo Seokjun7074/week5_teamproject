@@ -4,7 +4,6 @@ import tmpReducer from "./modules/tmpSlice";
 import reviewReducer from "./modules/reviewSlice";
 import userReducer from "./modules/userSlice";
 
-
 const store = configureStore({
   reducer: {
     cafe: cafeReducer,

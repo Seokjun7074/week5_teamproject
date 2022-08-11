@@ -5,10 +5,7 @@
       "pw": "a12!",
       "nick": "a12!",
       "gender": "male",
-      "birth": [
-        "May",
-        5
-      ],
+      "birth": ["May", 5],
       "profile_url": ""
     }
   ],
@@ -64,6 +61,7 @@
       "id": "rLRS3N_"
     }
   ],
+
   "review": [
     {
       "cafe_id": "고유 id",
@@ -82,4 +80,5 @@
       "content": "콘센트도 있고 카공하기 좋은 것 같습니다."
     }
   ]
+
 }
