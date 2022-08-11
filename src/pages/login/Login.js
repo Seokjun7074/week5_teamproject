@@ -14,6 +14,7 @@ import withReactContent from 'sweetalert2-react-content';
 import Swal from 'sweetalert2';
 import { useDispatch, useSelector } from 'react-redux';
 import { userLogin } from "../../redux/modules/userSlice";
+import { getCookie, setCookie } from '../../shared/Cookie';
 const MySwal = withReactContent(Swal);
 const Login = () => {
   const navigate = useNavigate();
@@ -87,11 +88,15 @@ const Login = () => {
       });
       document.getElementById('user_id').focus();
     }else if(pwChk){
+      //  instead of jwt just using user_id (tmp)
+      setCookie('Auth', user_id);
+      // console.log(document.cookie);
+      // console.log(getCookie('Auth'))
       MySwal.fire({
         title: '로그인 성공!',
         icon: 'success',
       });
-      navigate('/mypage/'+user_id)
+      // navigate('/mypage/'+user_id)
     }
     // console.log(e.target?.user_id.value);
   };
