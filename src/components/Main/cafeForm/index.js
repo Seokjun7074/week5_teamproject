@@ -10,6 +10,7 @@ import {
   InputWrapper,
   TextInput,
 } from "./style";
+import axios from "axios";
 
 const CafeForm = ({ visible, closeModal }) => {
   const new_cafe_id = uuidv4(); // 랜덤 아이디 생성
@@ -45,11 +46,14 @@ const CafeForm = ({ visible, closeModal }) => {
 
   const onSubmitHandler = () => {
     // console.log(cafeInfo);
-    const newDate = {
+    const newData = {
       ...cafeInfo,
       cafe_id: new_cafe_id,
     };
-    dispatch(createCafes(newDate));
+    // console.log(newData);
+    // dispatch(createCafes(newDate));
+    axios.post("http://localhost:3001/cafe", newData);
+
     closeModal();
   };
 

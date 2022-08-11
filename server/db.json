@@ -5,30 +5,59 @@
       "pw": "a12!",
       "nick": "a12!",
       "gender": "male",
-      "birth": ["May", 5],
+      "birth": [
+        "May",
+        5
+      ],
       "profile_url": ""
     }
   ],
   "cafe": [
     {
-      "cafe_id": "고유 id",
+      "cafe_id": "1",
       "writer_id": "userList.user_id",
-      "cafe_name": "카페이름1",
-      "cafe_address": "카페주소1",
-      "cafe_phone": "전화번호1",
-      "cafe_time": "카페운영시간1",
-      "cafe_img": ""
+      "cafe_name": "",
+      "cafe_address": "",
+      "cafe_phone": "",
+      "cafe_time": "",
+      "cafe_img": "/img/default_img.jpeg",
+      "id": "VPnRkVj"
     },
     {
-      "cafe_id": "고유 id",
+      "cafe_id": "2",
       "writer_id": "userList.user_id",
-      "cafe_name": "카페이름2",
-      "cafe_address": "카페주소2",
-      "cafe_phone": "전화번호2",
-      "cafe_time": "카페운영시간2",
-      "cafe_img": ""
+      "cafe_name": "",
+      "cafe_address": "",
+      "cafe_phone": "",
+      "cafe_time": "",
+      "cafe_img": "/img/default_img.jpeg",
+      "id": "VPnRkVj"
+    },
+    {
+      "cafe_id": "c6f70f91-ab5a-460c-82e8-45a680bc70f2",
+      "writer_id": "userList.user_id",
+      "cafe_name": "",
+      "cafe_address": "",
+      "cafe_phone": "",
+      "cafe_time": "",
+      "cafe_img": "blob:http://localhost:3000/145bd06c-b8da-4c27-a2d0-81651ebaad76",
+      "id": "PNLm7KV"
+    },
+    {
+      "cafe_id": "4608ac0b-8871-4e8f-9e20-171422a282bb",
+      "writer_id": "userList.user_id",
+      "cafe_name": "",
+      "cafe_address": "",
+      "cafe_phone": "",
+      "cafe_time": "",
+      "cafe_img": "blob:http://localhost:3000/821908c4-7b6f-4ae8-b4b8-312c2bee1352",
+      "id": "YEXGp4h"
     }
   ],
+<<<<<<< HEAD
+  "review": []
+}
+=======
 
   "review": [
     {
@@ -49,3 +78,4 @@
     }
   ]
 }
+>>>>>>> master
