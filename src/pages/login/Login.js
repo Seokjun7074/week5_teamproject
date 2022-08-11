@@ -13,8 +13,13 @@ import { Link, useNavigate } from 'react-router-dom';
 import withReactContent from 'sweetalert2-react-content';
 import Swal from 'sweetalert2';
 import { useDispatch, useSelector } from 'react-redux';
-import { userLogin } from "../../redux/modules/userSlice";
+import { userIdChk, userLogin } from "../../redux/modules/userSlice";
 import { getCookie, setCookie } from '../../shared/Cookie';
+import axios from 'axios';
+import apis from '../../api/axios';
+import { __getUser } from '../../async/user';
+
+
 const MySwal = withReactContent(Swal);
 const Login = () => {
   const navigate = useNavigate();
@@ -63,6 +68,16 @@ const Login = () => {
     }
   };
  
+  //
+  
+  // red alert
+  const redAlert = (msg) => {
+    MySwal.fire({
+      title: `${msg}`,
+      icon: "error",
+    });
+  };
+
   // chk id, pw, inefficient
   const userChk = useSelector(db=>db.user.userList.find((ele)=>ele.user_id===user_id));
   const pwChk = userChk?.pw===pw;
@@ -82,6 +97,7 @@ const Login = () => {
       });
       document.getElementById('pw').focus();
     }else if(!pwChk){
+      dispatch(userIdChk(user_id));
       MySwal.fire({
         title: '아이디, 비밀번호가 불일치 합니다.',
         icon: 'error',
@@ -90,16 +106,30 @@ const Login = () => {
     }else if(pwChk){
       //  instead of jwt just using user_id (tmp)
       setCookie('Auth', user_id);
-      // console.log(document.cookie);
-      // console.log(getCookie('Auth'))
+      console.log(document.cookie);
+      console.log(getCookie('Auth'))
       MySwal.fire({
         title: '로그인 성공!',
         icon: 'success',
       });
-      // navigate('/mypage/'+user_id)
+      //  navigate('/')
     }
   };
 
+  const fetchUserList = async () => {
+    await axios.get("http://localhost:3001/userList").then(
+    (res)=>console.log(res.data)
+    );
+  };
+
+  useEffect(() => {
+    // fetchUserList();
+    // console.log(apis.user_show());
+    // showUser
+    dispatch(__getUser());
+  }, [dispatch])
+  
+	
   return (
     <StWrap>
       <video

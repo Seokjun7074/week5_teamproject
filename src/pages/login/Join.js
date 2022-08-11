@@ -16,6 +16,8 @@ import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import { userJoin } from "../../redux/modules/userSlice";
+import axios from "axios";
+import { __userIdChk, __userJoin } from "../../async/user";
 // import axios from "axios";
 
 // import ReactPlayer from 'react-player';
@@ -50,7 +52,8 @@ const MySwal = withReactContent(Swal);
 //   const result = await axios.post("http://localhost:3000/join", user3);
 //   return result;
 // });
-
+let warn = '';
+let msg = '';
 const Join = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -289,7 +292,19 @@ const Join = () => {
   // Conditional Rendering
   // 1. loginCheckBtn, if :id dosen't exists, btn >> disabled=true, color changed => later
   
-  const userChk = useSelector(db=>db.user.userList.find((ele)=>ele.user_id===user_id));
+  // const userChk = useSelector(db=>db.user.userList.find((ele)=>ele.user_id===user_id));
+
+//   const userChk = async() => {
+//   try {
+//     const {data} = await axios.get ('http://localhost:3001/userList/?user_id='+user_id);
+//     console.log(data)
+//     return data;
+//    } catch (error) {
+//     // setWarn('아이디가 없습니다');
+//   }
+// }
+  
+
   const is_id = (e) => {
     // let isChk = e.target.isChk;
     if (e.target.value === "") {
@@ -299,7 +314,7 @@ const Join = () => {
       });
     } else {
       setId(e.target.value)
-      if (userChk) {
+      if (dispatch(__userIdChk)) {
         setIsChk(true);
         MySwal.fire({
           title: "The ID exists, please try another ID",
@@ -340,7 +355,12 @@ const Join = () => {
     if(user_id===""){
       setWarn("아이디를 입력해주세요.");
       redAlert(warn);
-    }else if (pw === "") {
+    }
+    // else if(setIsChk) {
+    //   setWarn("아이디 검사를 해주세요");
+    //   redAlert(warn);
+    // }
+    else if (pw === "") {
       setWarn("비밀번호를 입력해주세요.");
       redAlert(warn);
     } else if (4 > pw.length || pw.length > 20) {
@@ -368,7 +388,8 @@ const Join = () => {
         gender,
         birth:[monthSelected, daySelected]
       });
-      dispatch(userJoin(user2));
+      // dispatch(userJoin(user2));
+      dispatch(__userJoin(user2));
       setTimeout(()=>{ navigate('/login') }, 1000);
     }
     // e.preventDefault();
