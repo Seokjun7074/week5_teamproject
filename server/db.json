@@ -30,5 +30,22 @@
     }
   ],
 
-  "review": []
+  "review": [
+    {
+      "cafe_id": "고유 id",
+      "review_id": "고유 id",
+      "post_date": "2022-08-03",
+      "user_nick": "User1",
+      "user_id": "1",
+      "content": "커피 맛도 좋고 인테리어도 좋아요~~"
+    },
+    {
+      "cafe_id": "고유 id",
+      "review_id": "고유 id",
+      "post_date": "2022-08-10",
+      "user_nick": "User2",
+      "user_id": "2",
+      "content": "콘센트도 있고 카공하기 좋은 것 같습니다."
+    }
+  ]
 }
