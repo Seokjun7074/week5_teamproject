@@ -5,10 +5,7 @@
       "pw": "a12!",
       "nick": "a12!",
       "gender": "male",
-      "birth": [
-        "May",
-        5
-      ],
+      "birth": ["May", 5],
       "profile_url": ""
     }
   ],
@@ -60,8 +57,18 @@
       "cafe_address": "",
       "cafe_phone": "",
       "cafe_time": "",
-      "cafe_img": "blob:http://localhost:3000/a1988667-883c-4431-ac59-2706d391938f",
-      "id": "Kj8y8Ol"
+      "cafe_img": "blob:http://localhost:3000/821908c4-7b6f-4ae8-b4b8-312c2bee1352",
+      "id": "YEXGp4h"
+    },
+    {
+      "cafe_id": "3f567760-e764-4c04-8450-b2b692c19351",
+      "writer_id": "userList.user_id",
+      "cafe_name": "123",
+      "cafe_address": "1",
+      "cafe_phone": "2",
+      "cafe_time": "1",
+      "cafe_img": "/img/default_img.jpeg",
+      "id": "rLRS3N_"
     }
   ],
   "review": [

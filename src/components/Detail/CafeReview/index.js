@@ -3,12 +3,13 @@ import { MainWrap, InputWrap, ReviewList } from "./style"
 import { useRef, useState } from "react";
 import Review from "./review";
 import { useDispatch } from "react-redux";
-import { createReview } from "../../../redux/modules/reviewSlice";
+import { createReview, fetchReview } from "../../../redux/modules/reviewSlice";
 import { v4 as uuidv4 } from "uuid";
 import { useParams } from "react-router-dom";
 const CafeReview = ({ reviewList }) => {
 
     const dispatch = useDispatch();
+    dispatch(fetchReview());
     const cafe_id = useParams().cafe_id;
 
     const review_id = uuidv4(); // 랜덤 아이디 생성
