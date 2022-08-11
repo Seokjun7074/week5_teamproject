@@ -98,7 +98,6 @@ const Login = () => {
       });
       // navigate('/mypage/'+user_id)
     }
-    // console.log(e.target?.user_id.value);
   };
 
   return (
