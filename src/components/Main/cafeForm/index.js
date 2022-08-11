@@ -4,6 +4,7 @@ import { v4 as uuidv4 } from "uuid";
 import { useState, useEffect } from "react";
 import { CustomButton } from "../../CustomButton";
 import { createCafes } from "../../../redux/modules/cafeSlice";
+import { __createCafes } from "../../../redux/async/asyncCafe";
 import {
   CafeImagePreview,
   CafeFormWrapper,
@@ -45,14 +46,13 @@ const CafeForm = ({ visible, closeModal }) => {
   };
 
   const onSubmitHandler = () => {
-    // console.log(cafeInfo);
     const newData = {
       ...cafeInfo,
       cafe_id: new_cafe_id,
     };
     // console.log(newData);
-    // dispatch(__createCafes(newData));
-    axios.post("http://localhost:3001/cafe", newData);
+    dispatch(__createCafes(newData));
+    // axios.post("http://localhost:3001/cafe", newData);
 
     closeModal();
   };
