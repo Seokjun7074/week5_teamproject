@@ -1,24 +1,34 @@
 {
-    "userList":
-      [
-      {
-        "user_id": "a",
-        "pw": "a12!",
-        "nick": "a12!",
-        "gender": "male",
-        "birth" :["May",5],
-        "profile_url":""
-      }
-    ,
+  "userList": [
     {
       "user_id": "a",
       "pw": "a12!",
       "nick": "a12!",
       "gender": "male",
-      "birth" :["May",5],
-      "profile_url":""
+      "birth": ["May", 5],
+      "profile_url": ""
     }
-      ]
-      
+  ],
+  "cafe": [
+    {
+      "cafe_id": "고유 id",
+      "writer_id": "userList.user_id",
+      "cafe_name": "카페이름1",
+      "cafe_address": "카페주소1",
+      "cafe_phone": "전화번호1",
+      "cafe_time": "카페운영시간1",
+      "cafe_img": ""
+    },
+    {
+      "cafe_id": "고유 id",
+      "writer_id": "userList.user_id",
+      "cafe_name": "카페이름2",
+      "cafe_address": "카페주소2",
+      "cafe_phone": "전화번호2",
+      "cafe_time": "카페운영시간2",
+      "cafe_img": ""
+    }
+  ],
 
-  }
+  "review": []
+}
