@@ -26,8 +26,8 @@ const PostPagination = ({ filter }) => {
   const startIdx = (curPage - 1) * limit;
   const totalPage = Math.ceil(cafeList.length / limit);
 
-  const userInfo = useSelector(state=>state.user.tmpUser);
-   
+  const userInfo = useSelector((state) => state.user.tmpUser);
+
   const navigate = useNavigate();
   return (
     <PostPaginationWrapper>
