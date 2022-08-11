@@ -5,21 +5,36 @@ import {
   NavigatorButton,
   PostCardImg,
 } from "./style";
-import { dummyData } from "./dummy";
+// import { dummyData } from "./dummy";
 import PostCard from "../postCard";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { createTmp } from "../../../redux/modules/cafeSlice";
+import axios from "axios";
 
 const PostPagination = ({ filter }) => {
   const user = useSelector((state) => state.user.userList);
   // console.log(user);
+
   // Redux store에서 데이터 가져오기
-  const cafeList = useSelector((state) => {
-    return state.cafe.cafeList;
-  });
-  // const cafeList = dummyData;
+  // const cafeList = useSelector((state) => {
+  //   return state.cafe.cafeList;
+  // });
+
+  const [cafeList, setCafeList] = useState([]);
+  const fetchTodos = async () => {
+    const { data } = await axios.get("http://localhost:3001/cafe");
+    console.log(data);
+    setCafeList(data); // 서버로부터 fetching한 데이터를 useState의 state로 set 합니다.
+  };
+  console.log(cafeList);
+  // 생성한 함수를 컴포넌트가 mount 됐을 떄 실행하기 위해 useEffect를 사용합니다.
+  useEffect(() => {
+    // effect 구문에 생성한 함수를 넣어 실행합니다.
+    fetchTodos();
+  }, []);
+
   const dispatch = useDispatch();
   const [curPage, setCurPage] = useState(1); // 현재 페이지
   const limit = 8; // 페이지에서 보여줄 게시물 수
@@ -39,11 +54,12 @@ const PostPagination = ({ filter }) => {
           })
           .slice(startIdx, startIdx + limit)
           .map((data) => {
+            // console.log(data);
             return (
               <div
                 key={data.cafe_id}
                 onClick={() => {
-                  dispatch(createTmp(data.cafe_id));
+                  // dispatch(createTmp(data.cafe_id));
                   navigate(`/detail/${data.cafe_id}`);
                 }}
               >
