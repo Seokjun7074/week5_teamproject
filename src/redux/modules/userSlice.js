@@ -1,7 +1,6 @@
 import { createSlice, current} from "@reduxjs/toolkit";
-import axios from "axios";
 import apis from "../../api/axios";
-import { __getUser, __userIdChk, __userJoin } from "../../async/user";
+import { __getUser, __userIdChk, __userJoin } from "../async/user";
 
 //  action은 FSA(Flux Standard Action) 
 // type: 액션의 성질, payload: 액션의 인자, error, meta : 부가적 내용

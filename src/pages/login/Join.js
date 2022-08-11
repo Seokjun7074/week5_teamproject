@@ -17,7 +17,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import { userJoin } from "../../redux/modules/userSlice";
 import axios from "axios";
-import { __userIdChk, __userJoin } from "../../async/user";
+import { __userIdChk, __userJoin } from "../../redux/async/user";
+
 // import axios from "axios";
 
 // import ReactPlayer from 'react-player';

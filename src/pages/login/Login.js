@@ -13,11 +13,11 @@ import { Link, useNavigate } from 'react-router-dom';
 import withReactContent from 'sweetalert2-react-content';
 import Swal from 'sweetalert2';
 import { useDispatch, useSelector } from 'react-redux';
-import { userIdChk, userLogin } from "../../redux/modules/userSlice";
+import { userIdChk} from "../../redux/modules/userSlice";
 import { getCookie, setCookie } from '../../shared/Cookie';
 import axios from 'axios';
 import apis from '../../api/axios';
-import { __getUser } from '../../async/user';
+import { __getUser } from '../../redux/async/user';
 
 
 const MySwal = withReactContent(Swal);
