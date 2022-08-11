@@ -5,10 +5,7 @@
       "pw": "a12!",
       "nick": "a12!",
       "gender": "male",
-      "birth": [
-        "May",
-        5
-      ],
+      "birth": ["May", 5],
       "profile_url": ""
     }
   ],
@@ -54,10 +51,6 @@
       "id": "YEXGp4h"
     }
   ],
-<<<<<<< HEAD
-  "review": []
-}
-=======
 
   "review": [
     {
@@ -78,4 +71,3 @@
     }
   ]
 }
->>>>>>> master
