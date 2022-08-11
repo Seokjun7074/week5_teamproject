@@ -1,8 +1,19 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import axios from "axios";
 
 const initialState = {
     reviewList: [],
 };
+
+
+//thunk
+const fetchReview = createAsyncThunk(
+    'review/fetchReview',
+    async () => {
+        const response = await axios.get("http://localhost:3001/review");
+        const data = await response.json();
+        return response;
+    });
 
 const reviewSlice = createSlice({
     name: "review",
@@ -22,8 +33,20 @@ const reviewSlice = createSlice({
                 reviewList: state.reviewList.filter((e) => e.review_id !== idx),
             };
         },
+        extraReducers: (builder) => {
+            builder.addCase(fetchReview.pending, (state) => {
+            });
+            builder.addCase(fetchReview.fulfilled, (state, action) => {
+                state.reviewList = action.payload;
+                console.log("데이터 업데이트!!", state.reviewList);
+            })
+            builder.addCase(fetchReview.rejected, (state, action) => {
+                state.reviewList = [];
+            })
+        }
     }
 });
 
 export const { createReview, deleteReview } = reviewSlice.actions;
+export { fetchReview };
 export default reviewSlice.reducer;

@@ -1,14 +1,92 @@
 {
-    "userList":
-      [
-      {
-        "user_id": "a",
-        "pw": "a12!",
-        "nick": "a12!",
-        "gender": "male",
-        "birth" :["May",5],
-        "profile_url":""
-      }
-      ]
-
+  "userList": [
+    {
+      "user_id": "a",
+      "pw": "a12!",
+      "nick": "a12!",
+      "gender": "male",
+      "birth": ["May", 5],
+      "profile_url": ""
     }
+  ],
+  "cafe": [
+    {
+      "cafe_id": "1",
+      "writer_id": "userList.user_id",
+      "cafe_name": "",
+      "cafe_address": "",
+      "cafe_phone": "",
+      "cafe_time": "",
+      "cafe_img": "/img/default_img.jpeg",
+      "id": "VPnRkVj"
+    },
+    {
+      "cafe_id": "2",
+      "writer_id": "userList.user_id",
+      "cafe_name": "",
+      "cafe_address": "",
+      "cafe_phone": "",
+      "cafe_time": "",
+      "cafe_img": "/img/default_img.jpeg",
+      "id": "VPnRkVj"
+    },
+    {
+      "cafe_id": "98cc9500-410f-41c7-af9d-f48aa400f1bd",
+      "writer_id": "userList.user_id",
+      "cafe_name": "1",
+      "cafe_address": "2",
+      "cafe_phone": "",
+      "cafe_time": "",
+      "cafe_img": "blob:http://localhost:3000/766aa165-0c88-4626-994a-e656cda6a0f7",
+      "id": "8nWbE5w"
+    },
+    {
+      "cafe_id": "2849eb27-414c-48fc-b09f-a402d9fbd7c1",
+      "writer_id": "userList.user_id",
+      "cafe_name": "",
+      "cafe_address": "",
+      "cafe_phone": "",
+      "cafe_time": "",
+      "cafe_img": "/img/default_img.jpeg",
+      "id": "GpqZ7AD"
+    },
+    {
+      "cafe_id": "0463faf0-1169-4c11-be08-b975f62ccf81",
+      "writer_id": "userList.user_id",
+      "cafe_name": "",
+      "cafe_address": "",
+      "cafe_phone": "",
+      "cafe_time": "",
+      "cafe_img": "blob:http://localhost:3000/821908c4-7b6f-4ae8-b4b8-312c2bee1352",
+      "id": "YEXGp4h"
+    },
+    {
+      "cafe_id": "3f567760-e764-4c04-8450-b2b692c19351",
+      "writer_id": "userList.user_id",
+      "cafe_name": "123",
+      "cafe_address": "1",
+      "cafe_phone": "2",
+      "cafe_time": "1",
+      "cafe_img": "/img/default_img.jpeg",
+      "id": "rLRS3N_"
+    }
+  ],
+  "review": [
+    {
+      "cafe_id": "고유 id",
+      "review_id": "고유 id",
+      "post_date": "2022-08-03",
+      "user_nick": "User1",
+      "user_id": "1",
+      "content": "커피 맛도 좋고 인테리어도 좋아요~~"
+    },
+    {
+      "cafe_id": "고유 id",
+      "review_id": "고유 id",
+      "post_date": "2022-08-10",
+      "user_nick": "User2",
+      "user_id": "2",
+      "content": "콘센트도 있고 카공하기 좋은 것 같습니다."
+    }
+  ]
+}

@@ -4,12 +4,14 @@ import { v4 as uuidv4 } from "uuid";
 import { useState, useEffect } from "react";
 import { CustomButton } from "../../CustomButton";
 import { createCafes } from "../../../redux/modules/cafeSlice";
+import { __createCafes } from "../../../redux/async/asyncCafe";
 import {
   CafeImagePreview,
   CafeFormWrapper,
   InputWrapper,
   TextInput,
 } from "./style";
+import axios from "axios";
 
 const CafeForm = ({ visible, closeModal }) => {
   const new_cafe_id = uuidv4(); // 랜덤 아이디 생성
@@ -44,12 +46,14 @@ const CafeForm = ({ visible, closeModal }) => {
   };
 
   const onSubmitHandler = () => {
-    // console.log(cafeInfo);
-    const newDate = {
+    const newData = {
       ...cafeInfo,
       cafe_id: new_cafe_id,
     };
-    dispatch(createCafes(newDate));
+    // console.log(newData);
+    dispatch(__createCafes(newData));
+    // axios.post("http://localhost:3001/cafe", newData);
+
     closeModal();
   };
 

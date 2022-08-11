@@ -5,29 +5,39 @@ import {
   NavigatorButton,
   PostCardImg,
 } from "./style";
-import { dummyData } from "./dummy";
+// import { dummyData } from "./dummy";
 import PostCard from "../postCard";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { createTmp } from "../../../redux/modules/cafeSlice";
+import { __getCafes } from "../../../redux/async/asyncCafe";
+import axios from "axios";
 
 const PostPagination = ({ filter }) => {
+  const dispatch = useDispatch();
   const user = useSelector((state) => state.user.userList);
   // console.log(user);
+
+  // const [cafeList, setCafeList] = useState([]);
+  const getCafeData = () => {
+    dispatch(__getCafes());
+  };
+  useEffect(() => {
+    getCafeData();
+  }, [dispatch]);
+
   // Redux store에서 데이터 가져오기
-  const cafeList = useSelector((state) => {
-    return state.cafe.cafeList;
-  });
-  // const cafeList = dummyData;
-  const dispatch = useDispatch();
+  const { cafeList } = useSelector((state) => state.cafe);
+  // console.log("출력!", cafeList);
+
   const [curPage, setCurPage] = useState(1); // 현재 페이지
   const limit = 8; // 페이지에서 보여줄 게시물 수
   const startIdx = (curPage - 1) * limit;
   const totalPage = Math.ceil(cafeList.length / limit);
 
-  const userInfo = useSelector(state=>state.user.tmpUser);
-   
+  const userInfo = useSelector((state) => state.user.tmpUser);
+
   const navigate = useNavigate();
   return (
     <PostPaginationWrapper>
@@ -39,11 +49,12 @@ const PostPagination = ({ filter }) => {
           })
           .slice(startIdx, startIdx + limit)
           .map((data) => {
+            // console.log(data);
             return (
               <div
                 key={data.cafe_id}
                 onClick={() => {
-                  dispatch(createTmp(data.cafe_id));
+                  // dispatch(createTmp(data.cafe_id));
                   navigate(`/detail/${data.cafe_id}`);
                 }}
               >

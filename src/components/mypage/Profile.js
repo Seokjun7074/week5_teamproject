@@ -23,7 +23,6 @@ export default function Profile({tmpData}){
   };
 
   console.log("tempdata",tmpData);
-  const [postImage,setPostImage]=useState(setFileImage);
   const onClickHandler=()=>{
    const img_url=fileImage;
    const new_nick=Nick;
