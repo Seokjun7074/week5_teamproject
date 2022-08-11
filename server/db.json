@@ -32,7 +32,7 @@
 
   "review": [
     {
-      "cafe_id": "고유 id",
+      "cafe_id": "고유 id 1",
       "review_id": "고유 id",
       "post_date": "2022-08-03",
       "user_nick": "User1",
@@ -40,12 +40,12 @@
       "content": "커피 맛도 좋고 인테리어도 좋아요~~"
     },
     {
-      "cafe_id": "고유 id",
+      "cafe_id": "고유 id 2",
       "review_id": "고유 id",
       "post_date": "2022-08-10",
       "user_nick": "User2",
       "user_id": "2",
-      "content": "콘센트도 있고 카공하기 좋은 것 같습니다."
+      "content": "콘센트도 있고 카공하기 좋은 것 같아요"
     }
   ]
 }

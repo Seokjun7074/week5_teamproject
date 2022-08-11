@@ -6,7 +6,9 @@ import { useDispatch } from "react-redux";
 import { createReview } from "../../../redux/modules/reviewSlice";
 import { v4 as uuidv4 } from "uuid";
 import { useParams } from "react-router-dom";
+
 const CafeReview = ({ reviewList }) => {
+
 
     const dispatch = useDispatch();
     const cafe_id = useParams().cafe_id;
