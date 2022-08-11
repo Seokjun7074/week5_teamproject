@@ -28,8 +28,8 @@ const PostPagination = ({ filter }) => {
   }, [dispatch]);
 
   // Redux store에서 데이터 가져오기
-  const cafeList = useSelector((state) => state.cafeList);
-  console.log(cafeList);
+  const { cafeList } = useSelector((state) => state.cafe);
+  // console.log("출력!", cafeList);
 
   const [curPage, setCurPage] = useState(1); // 현재 페이지
   const limit = 8; // 페이지에서 보여줄 게시물 수

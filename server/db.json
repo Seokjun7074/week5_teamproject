@@ -5,7 +5,10 @@
       "pw": "a12!",
       "nick": "a12!",
       "gender": "male",
-      "birth": ["May", 5],
+      "birth": [
+        "May",
+        5
+      ],
       "profile_url": ""
     }
   ],
@@ -31,27 +34,36 @@
       "id": "VPnRkVj"
     },
     {
-      "cafe_id": "c6f70f91-ab5a-460c-82e8-45a680bc70f2",
+      "cafe_id": "98cc9500-410f-41c7-af9d-f48aa400f1bd",
       "writer_id": "userList.user_id",
-      "cafe_name": "",
-      "cafe_address": "",
+      "cafe_name": "1",
+      "cafe_address": "2",
       "cafe_phone": "",
       "cafe_time": "",
-      "cafe_img": "blob:http://localhost:3000/145bd06c-b8da-4c27-a2d0-81651ebaad76",
-      "id": "PNLm7KV"
+      "cafe_img": "blob:http://localhost:3000/766aa165-0c88-4626-994a-e656cda6a0f7",
+      "id": "8nWbE5w"
     },
     {
-      "cafe_id": "4608ac0b-8871-4e8f-9e20-171422a282bb",
+      "cafe_id": "2849eb27-414c-48fc-b09f-a402d9fbd7c1",
       "writer_id": "userList.user_id",
       "cafe_name": "",
       "cafe_address": "",
       "cafe_phone": "",
       "cafe_time": "",
-      "cafe_img": "blob:http://localhost:3000/821908c4-7b6f-4ae8-b4b8-312c2bee1352",
-      "id": "YEXGp4h"
+      "cafe_img": "/img/default_img.jpeg",
+      "id": "GpqZ7AD"
+    },
+    {
+      "cafe_id": "0463faf0-1169-4c11-be08-b975f62ccf81",
+      "writer_id": "userList.user_id",
+      "cafe_name": "",
+      "cafe_address": "",
+      "cafe_phone": "",
+      "cafe_time": "",
+      "cafe_img": "blob:http://localhost:3000/a1988667-883c-4431-ac59-2706d391938f",
+      "id": "Kj8y8Ol"
     }
   ],
-
   "review": [
     {
       "cafe_id": "고유 id",
